@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Music, Tent, Wrench, Bird, ShoppingBag, Users, Flame } from "lucide-react";
+import { Trophy, Music, Tent, TreePine, Bird, ShoppingBag, Users, Flame } from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
@@ -30,7 +30,7 @@ const highlights = [
     img: hlCountry,
   },
   {
-    icon: Wrench,
+    icon: TreePine,
     title: "Kettensägenkunst",
     desc: "Live-Schnitzvorführungen – wenn aus rohem Holz Kunst entsteht. Handwerk hautnah.",
     img: hlChainsaw,
