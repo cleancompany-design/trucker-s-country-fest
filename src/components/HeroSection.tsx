@@ -23,6 +23,11 @@ const HeroSection = () => {
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
 
+      {/* Ticket counter top-right */}
+      <div className="absolute top-7 right-6 z-20">
+        <TicketCounter />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.p
