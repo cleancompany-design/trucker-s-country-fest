@@ -110,10 +110,10 @@ const HighlightsSection = () => {
                 />
               </div>
               {/* Text */}
-              <div className="p-5 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <h.icon className="w-5 h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-lg font-semibold">{h.title}</h3>
+              <div className="p-5 pt-4 flex gap-4">
+                <div className="shrink-0 flex items-start gap-2 min-w-[120px]">
+                  <h.icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <h3 className="font-display text-base font-semibold leading-tight">{h.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.desc}</p>
               </div>
