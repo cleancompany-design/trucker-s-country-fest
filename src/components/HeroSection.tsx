@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
 import dekraLogo from "@/assets/dekra-logo.png";
 import Countdown from "./Countdown";
+import TicketCounter from "./TicketCounter";
 import { Calendar, MapPin } from "lucide-react";
 
 const HeroSection = () => {
@@ -20,6 +21,11 @@ const HeroSection = () => {
       {/* DEKRA Logo top-left */}
       <div className="absolute top-6 left-6 z-20">
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
+      </div>
+
+      {/* Ticket counter top-right */}
+      <div className="absolute top-7 right-6 z-20">
+        <TicketCounter />
       </div>
 
       {/* Content */}
