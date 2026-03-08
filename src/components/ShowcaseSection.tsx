@@ -64,7 +64,7 @@ const ShowcaseSection = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+            </motion.div>
     </section>
   );
 };

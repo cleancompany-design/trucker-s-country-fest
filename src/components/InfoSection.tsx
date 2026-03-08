@@ -53,15 +53,15 @@ const InfoSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
-        >
-          {infoCards.map((card) => (
-            <div
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {infoCards.map((card, i) => (
+            <motion.div
               key={card.title}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
             >
               <div className="relative h-36 overflow-hidden">
