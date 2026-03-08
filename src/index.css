@@ -79,7 +79,7 @@
 
 @layer components {
   .text-glow {
-    text-shadow: 0 0 20px hsla(30, 90%, 50%, 0.4);
+    text-shadow: 0 0 20px hsla(153, 100%, 25%, 0.4);
   }
 
   .section-divider {
