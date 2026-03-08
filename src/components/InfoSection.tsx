@@ -11,7 +11,7 @@ const infoCards = [
     title: "Datum",
     line1: "8. – 9. August 2026",
     line2: "Samstag & Sonntag",
-    img: hlCountry,
+    img: infoDatum,
   },
   {
     icon: MapPin,
