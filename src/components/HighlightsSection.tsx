@@ -68,7 +68,7 @@ const container = {
 
 const getItemVariant = (index: number) => ({
   hidden: { opacity: 0, x: index % 2 === 0 ? -40 : 40, y: 20 },
-  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 });
 
 const HighlightsSection = () => {
