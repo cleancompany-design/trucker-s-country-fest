@@ -101,9 +101,9 @@ const InfoSection = () => {
           >
             JETZT TICKETS SICHERN
           </a>
-          <p className="mt-4 text-muted-foreground font-body text-sm">
-            Sei dabei – bevor es ausverkauft ist.
-          </p>
+          <div className="mt-4">
+            <TicketCounter />
+          </div>
         </motion.div>
       </div>
     </section>
