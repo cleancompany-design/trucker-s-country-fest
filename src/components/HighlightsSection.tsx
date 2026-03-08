@@ -63,13 +63,13 @@ const highlights = [
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+const getItemVariant = (index: number) => ({
+  hidden: { opacity: 0, x: index % 2 === 0 ? -40 : 40, y: 20 },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+});
 
 const HighlightsSection = () => {
   return (
@@ -94,10 +94,11 @@ const HighlightsSection = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
-          {highlights.map((h) => (
+          {highlights.map((h, i) => (
             <motion.div
               key={h.title}
-              variants={item}
+              variants={getItemVariant(i)}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
             >
               {/* Image */}
