@@ -87,8 +87,8 @@
     background: linear-gradient(
       90deg,
       transparent,
-      hsl(30, 90%, 50%),
-      hsl(15, 80%, 45%),
+      hsl(153, 100%, 25%),
+      hsl(153, 80%, 30%),
       transparent
     );
   }
