@@ -1,46 +1,63 @@
 import { motion } from "framer-motion";
 import { Trophy, Music, Tent, Wrench, Bird, ShoppingBag, Users, Flame } from "lucide-react";
 
+import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
+import hlShowshine from "@/assets/hl-showshine.jpg";
+import hlCountry from "@/assets/hl-country.jpg";
+import hlChainsaw from "@/assets/hl-chainsaw.jpg";
+import hlFalconry from "@/assets/hl-falconry.jpg";
+import hlExhibitors from "@/assets/hl-exhibitors.jpg";
+import hlCamping from "@/assets/hl-camping.jpg";
+import hlFamily from "@/assets/hl-family.jpg";
+
 const highlights = [
   {
     icon: Trophy,
     title: "Truck Trial EM",
     desc: "Internationale Teams steuern tonnenschwere Trucks durch extreme Offroad-Parcours. Hautnah miterleben!",
+    img: hlTrucktrial,
   },
   {
     icon: Flame,
     title: "Show & Shine",
     desc: "Die geilsten Showtrucks Europas im Contest – Chrome, Airbrush und PS-Wahnsinn vom Feinsten.",
+    img: hlShowshine,
   },
   {
     icon: Music,
     title: "Country Village",
     desc: "Live-Musik, Line-Dance, Western-Spiele und Marktstände. Country-Feeling pur!",
+    img: hlCountry,
   },
   {
     icon: Wrench,
     title: "Kettensägenkunst",
     desc: "Live-Schnitzvorführungen – wenn aus rohem Holz Kunst entsteht. Handwerk hautnah.",
+    img: hlChainsaw,
   },
   {
     icon: Bird,
     title: "Falknerei",
     desc: "Greifvogel-Flugshows über dem Festival. Adler, Falken und Bussarde im freien Flug.",
+    img: hlFalconry,
   },
   {
     icon: ShoppingBag,
     title: "Aussteller & Händler",
     desc: "Alles rund um Trucks, Outdoor & Lifestyle. Stöbern, entdecken, mitnehmen.",
+    img: hlExhibitors,
   },
   {
     icon: Tent,
     title: "Camping",
     desc: "Truck- & Country-Camp direkt am Gelände. Abends Lagerfeuer, morgens Motorengeräusche.",
+    img: hlCamping,
   },
   {
     icon: Users,
     title: "Familienprogramm",
     desc: "Erlebnisbereiche für alle Altersgruppen. Hier kommt die ganze Familie auf ihre Kosten.",
+    img: hlFamily,
   },
 ];
 
@@ -81,11 +98,25 @@ const HighlightsSection = () => {
             <motion.div
               key={h.title}
               variants={item}
-              className="card-rugged rounded-lg p-6 group hover:border-primary/50 transition-colors duration-300"
+              className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
             >
-              <h.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display text-lg font-semibold mb-2">{h.title}</h3>
-              <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.desc}</p>
+              {/* Image */}
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={h.img}
+                  alt={h.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4">
+                  <h.icon className="w-7 h-7 text-primary drop-shadow-lg" />
+                </div>
+              </div>
+              {/* Text */}
+              <div className="p-5 pt-3">
+                <h3 className="font-display text-lg font-semibold mb-2">{h.title}</h3>
+                <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.desc}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
