@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Ticket } from "lucide-react";
+import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
+import infoZeiten from "@/assets/info-zeiten.jpg";
 import infoTickets from "@/assets/info-tickets.jpg";
-import hlCamping from "@/assets/hl-camping.jpg";
-import hlCountry from "@/assets/hl-country.jpg";
 
 const infoCards = [
   {
