@@ -101,7 +101,7 @@ const InfoSection = () => {
           >
             JETZT TICKETS SICHERN
           </a>
-          <div className="mt-4">
+          <div className="mt-4 flex justify-center">
             <TicketCounter />
           </div>
         </motion.div>
