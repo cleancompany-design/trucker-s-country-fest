@@ -1,10 +1,45 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Ticket } from "lucide-react";
+import infoLocation from "@/assets/info-location.jpg";
+import infoTickets from "@/assets/info-tickets.jpg";
+import hlCamping from "@/assets/hl-camping.jpg";
+import hlCountry from "@/assets/hl-country.jpg";
+
+const infoCards = [
+  {
+    icon: Calendar,
+    title: "Datum",
+    line1: "8. – 9. August 2026",
+    line2: "Samstag & Sonntag",
+    img: hlCountry,
+  },
+  {
+    icon: MapPin,
+    title: "Location",
+    line1: "DEKRA Lausitzring",
+    line2: "Offroad-Gelände, Klettwitz",
+    img: infoLocation,
+  },
+  {
+    icon: Clock,
+    title: "Öffnungszeiten",
+    line1: "Ganztägig",
+    line2: "Camping ab Freitag möglich",
+    img: hlCamping,
+  },
+  {
+    icon: Ticket,
+    title: "Tickets",
+    line1: "Infos folgen in Kürze",
+    line2: "Tages- & Wochenendtickets",
+    img: infoTickets,
+  },
+];
 
 const InfoSection = () => {
   return (
     <section className="py-20 sm:py-28 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,43 +56,31 @@ const InfoSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
         >
-          <div className="card-rugged rounded-lg p-8 flex items-start gap-4">
-            <Calendar className="w-8 h-8 text-primary shrink-0 mt-1" />
-            <div>
-              <h3 className="font-display text-xl font-semibold mb-1">Datum</h3>
-              <p className="text-muted-foreground font-body text-lg">8. – 9. August 2026</p>
-              <p className="text-muted-foreground font-body text-sm mt-1">Samstag & Sonntag</p>
+          {infoCards.map((card) => (
+            <div
+              key={card.title}
+              className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
+            >
+              <div className="relative h-36 overflow-hidden">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+                <div className="absolute bottom-3 left-4 flex items-center gap-3">
+                  <card.icon className="w-7 h-7 text-primary drop-shadow-lg" />
+                  <h3 className="font-display text-xl font-semibold drop-shadow-lg">{card.title}</h3>
+                </div>
+              </div>
+              <div className="p-5 pt-3">
+                <p className="text-foreground font-body text-lg">{card.line1}</p>
+                <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="card-rugged rounded-lg p-8 flex items-start gap-4">
-            <MapPin className="w-8 h-8 text-primary shrink-0 mt-1" />
-            <div>
-              <h3 className="font-display text-xl font-semibold mb-1">Location</h3>
-              <p className="text-muted-foreground font-body text-lg">DEKRA Lausitzring</p>
-              <p className="text-muted-foreground font-body text-sm mt-1">Offroad-Gelände, Klettwitz</p>
-            </div>
-          </div>
-
-          <div className="card-rugged rounded-lg p-8 flex items-start gap-4">
-            <Clock className="w-8 h-8 text-primary shrink-0 mt-1" />
-            <div>
-              <h3 className="font-display text-xl font-semibold mb-1">Öffnungszeiten</h3>
-              <p className="text-muted-foreground font-body text-lg">Ganztägig</p>
-              <p className="text-muted-foreground font-body text-sm mt-1">Camping ab Freitag möglich</p>
-            </div>
-          </div>
-
-          <div className="card-rugged rounded-lg p-8 flex items-start gap-4">
-            <Ticket className="w-8 h-8 text-primary shrink-0 mt-1" />
-            <div>
-              <h3 className="font-display text-xl font-semibold mb-1">Tickets</h3>
-              <p className="text-muted-foreground font-body text-lg">Infos folgen in Kürze</p>
-              <p className="text-muted-foreground font-body text-sm mt-1">Tages- & Wochenendtickets</p>
-            </div>
-          </div>
+          ))}
         </motion.div>
 
         {/* CTA */}
