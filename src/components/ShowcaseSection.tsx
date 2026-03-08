@@ -61,10 +61,10 @@ const ShowcaseSection = () => {
               <p className="text-muted-foreground font-body text-lg leading-relaxed">
                 {s.text}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
-            </motion.div>
+      </div>
     </section>
   );
 };

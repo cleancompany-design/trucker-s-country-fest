@@ -80,9 +80,9 @@ const InfoSection = () => {
                 <p className="text-foreground font-body text-lg">{card.line1}</p>
                 <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div
