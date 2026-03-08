@@ -107,14 +107,13 @@ const HighlightsSection = () => {
                   alt={h.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-4">
-                  <h.icon className="w-7 h-7 text-primary drop-shadow-lg" />
-                </div>
               </div>
               {/* Text */}
-              <div className="p-5 pt-3">
-                <h3 className="font-display text-lg font-semibold mb-2">{h.title}</h3>
+              <div className="p-5 pt-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <h.icon className="w-5 h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-lg font-semibold">{h.title}</h3>
+                </div>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.desc}</p>
               </div>
             </motion.div>
