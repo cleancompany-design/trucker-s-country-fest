@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
+import dekraLogo from "@/assets/dekra-logo.png";
 import Countdown from "./Countdown";
 import { Calendar, MapPin } from "lucide-react";
 
@@ -14,6 +15,11 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
+      </div>
+
+      {/* DEKRA Logo top-left */}
+      <div className="absolute top-6 left-6 z-20">
+        <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
 
       {/* Content */}
