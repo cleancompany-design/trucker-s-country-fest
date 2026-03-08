@@ -28,7 +28,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-primary font-display text-lg sm:text-xl tracking-[0.3em] mb-4"
+          className="text-foreground font-display text-lg sm:text-xl tracking-[0.3em] mb-4 font-semibold"
         >
           08. – 09. AUGUST 2026
         </motion.p>
