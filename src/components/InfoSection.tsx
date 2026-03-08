@@ -25,7 +25,7 @@ const infoCards = [
     title: "Öffnungszeiten",
     line1: "Ganztägig",
     line2: "Camping ab Freitag möglich",
-    img: hlCamping,
+    img: infoZeiten,
   },
   {
     icon: Ticket,
