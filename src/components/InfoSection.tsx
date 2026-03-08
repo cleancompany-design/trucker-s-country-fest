@@ -71,13 +71,15 @@ const InfoSection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-5 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <card.icon className="w-5 h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-xl font-semibold">{card.title}</h3>
+              <div className="p-5 pt-4 flex gap-4">
+                <div className="shrink-0 flex items-start gap-2 min-w-[110px]">
+                  <card.icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <h3 className="font-display text-lg font-semibold leading-tight">{card.title}</h3>
                 </div>
-                <p className="text-foreground font-body text-lg">{card.line1}</p>
-                <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+                <div>
+                  <p className="text-foreground font-body text-lg">{card.line1}</p>
+                  <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+                </div>
               </div>
             </motion.div>
           ))}
