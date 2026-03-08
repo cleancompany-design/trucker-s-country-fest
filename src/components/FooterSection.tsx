@@ -1,21 +1,32 @@
+const Divider = () => (
+  <span className="hidden sm:block w-px h-4 bg-primary/60" />
+);
+
 const FooterSection = () => {
   return (
     <footer className="border-t border-border py-10 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="font-display text-lg tracking-wider text-muted-foreground">
-          TRUCK & COUNTRY FESTIVAL 2026
-        </div>
-        <div className="flex gap-6 text-sm font-body text-muted-foreground">
-          <a href="https://dekra-lausitzring.de/impressum/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+      <div className="max-w-6xl mx-auto">
+        {/* Top row */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm font-body text-muted-foreground flex-wrap">
+          <span className="font-display text-base tracking-wider">TRUCK & COUNTRY FESTIVAL 2026</span>
+          <Divider />
+          <a href="https://dekra-lausitzring.de/impressum/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">
             Impressum
           </a>
-          <a href="https://dekra-lausitzring.de/datenschutz/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          <Divider />
+          <a href="https://dekra-lausitzring.de/datenschutz/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">
             Datenschutz
           </a>
+          <Divider />
+          <span className="sm:px-4">DEKRA Lausitzring</span>
+          <Divider />
+          <span className="sm:px-4">© DEKRA Lausitzring</span>
         </div>
-        <div className="text-sm text-muted-foreground font-body">
-          DEKRA Lausitzring
-        </div>
+
+        {/* Trademark notice */}
+        <p className="text-center text-xs text-muted-foreground/60 font-body mt-4">
+          Der DEKRA Lausitzring ist eine eingetragene Marke der DEKRA Automobil GmbH
+        </p>
       </div>
     </footer>
   );
