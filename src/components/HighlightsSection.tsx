@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Music, Tent, TreePine, Bird, ShoppingBag, Users, Flame } from "lucide-react";
+import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Users, Flame } from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
