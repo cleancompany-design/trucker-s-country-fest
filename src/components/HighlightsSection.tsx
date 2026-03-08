@@ -30,7 +30,7 @@ const highlights = [
     img: hlCountry,
   },
   {
-    icon: TreePine,
+    icon: Axe,
     title: "Kettensägenkunst",
     desc: "Live-Schnitzvorführungen – wenn aus rohem Holz Kunst entsteht. Handwerk hautnah.",
     img: hlChainsaw,
