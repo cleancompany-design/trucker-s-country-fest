@@ -94,10 +94,11 @@ const HighlightsSection = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
-          {highlights.map((h) => (
+          {highlights.map((h, i) => (
             <motion.div
               key={h.title}
-              variants={item}
+              variants={getItemVariant(i)}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
             >
               {/* Image */}
