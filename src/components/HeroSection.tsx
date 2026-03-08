@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
 import dekraLogo from "@/assets/dekra-logo.png";
 import Countdown from "./Countdown";
-import TicketCounter from "./TicketCounter";
 import { Calendar, MapPin } from "lucide-react";
 
 const HeroSection = () => {
