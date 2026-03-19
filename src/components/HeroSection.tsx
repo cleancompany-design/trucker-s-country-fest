@@ -4,6 +4,8 @@ import dekraLogo from "@/assets/dekra-logo.png";
 import Countdown from "./Countdown";
 import { Calendar, MapPin } from "lucide-react";
 
+const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -22,7 +24,6 @@ const HeroSection = () => {
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
 
-
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <motion.p
@@ -31,7 +32,7 @@ const HeroSection = () => {
           transition={{ delay: 0.2 }}
           className="text-foreground font-display text-lg sm:text-xl tracking-[0.3em] mb-4 font-semibold"
         >
-          08. – 09. AUGUST 2026
+          07. – 09. AUGUST 2026
         </motion.p>
 
         <motion.h1
@@ -58,7 +59,7 @@ const HeroSection = () => {
           </span>
           <span className="flex items-center gap-2 font-body">
             <Calendar className="w-4 h-4 text-primary" />
-            2 Tage Action
+            2,5 Tage Action
           </span>
         </motion.div>
 
@@ -75,7 +76,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2 }}
-          href="https://shop.dekra-lausitzring.de/"
+          href={TICKET_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-primary text-primary-foreground font-display text-lg sm:text-xl px-10 py-4 rounded-lg tracking-wider hover:brightness-110 transition-all animate-pulse-glow"

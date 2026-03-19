@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Ticket } from "lucide-react";
 import TicketCounter from "./TicketCounter";
-// Unique images for each info card
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
 import infoZeiten from "@/assets/info-zeiten.jpg";
 import infoTickets from "@/assets/info-tickets.jpg";
 
+const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
+
 const infoCards = [
   {
     icon: Calendar,
     title: "Datum",
-    line1: "8. – 9. August 2026",
-    line2: "Samstag & Sonntag",
+    line1: "7. – 9. August 2026",
+    line2: "Freitag bis Sonntag",
     img: infoDatum,
   },
   {
@@ -32,7 +33,7 @@ const infoCards = [
   {
     icon: Ticket,
     title: "Tickets",
-    line1: "Infos folgen in Kürze",
+    line1: "Jetzt verfügbar",
     line2: "Tages- & Wochenendtickets",
     img: infoTickets,
   },
@@ -94,7 +95,7 @@ const InfoSection = () => {
           className="text-center mt-16"
         >
           <a
-            href="https://shop.dekra-lausitzring.de/"
+            href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-primary text-primary-foreground font-display text-xl px-12 py-5 rounded-lg tracking-wider hover:brightness-110 transition-all animate-pulse-glow"
