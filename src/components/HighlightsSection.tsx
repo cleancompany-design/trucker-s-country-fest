@@ -102,9 +102,11 @@ const HighlightsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            <Star className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 align-middle" />
-            Was dich <span className="text-primary">erwartet</span>
+          <h2 className="flex items-center justify-center gap-3 font-display text-4xl sm:text-5xl font-bold mb-4">
+            <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
+            <span>
+              Was dich <span className="text-primary">erwartet</span>
+            </span>
           </h2>
           <div className="section-divider w-48 mx-auto" />
           <p className="text-muted-foreground font-body text-sm mt-6">
