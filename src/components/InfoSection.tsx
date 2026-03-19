@@ -104,8 +104,8 @@ const InfoSection = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h3 className="flex items-center justify-center gap-2 font-display text-2xl sm:text-3xl font-semibold mb-10">
-            <Ticket className="w-6 h-6 text-primary shrink-0" />
+          <h3 className="flex items-center justify-center gap-3 font-display text-4xl sm:text-5xl font-bold mb-10">
+            <Ticket className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
             <span>
               Tickets im <span className="text-primary">Überblick</span>
             </span>
