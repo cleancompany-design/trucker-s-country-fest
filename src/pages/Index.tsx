@@ -6,6 +6,7 @@ import LineupSection from "@/components/LineupSection";
 import AnfahrtSection from "@/components/AnfahrtSection";
 import InfoSection from "@/components/InfoSection";
 import FooterSection from "@/components/FooterSection";
+import CookieBanner from "@/components/CookieBanner";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <AnfahrtSection />
       <InfoSection />
       <FooterSection />
+      <CookieBanner />
     </div>
   );
 };
