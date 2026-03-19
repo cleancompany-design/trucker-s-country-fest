@@ -64,7 +64,7 @@ const InfoSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {infoCards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -105,7 +105,7 @@ const InfoSection = () => {
             <Ticket className="inline w-6 h-6 text-primary mr-2 -mt-1" />
             Tickets im <span className="text-primary">Überblick</span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">
              {tickets.map((t, i) => (
               <motion.div
                 key={t.name}
@@ -114,10 +114,10 @@ const InfoSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="card-rugged rounded-lg p-5 flex items-center justify-between gap-4"
+                className="card-rugged rounded-lg p-3 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4"
               >
-                <span className="font-body text-foreground font-medium text-sm">{t.name}</span>
-                <span className="font-display text-primary font-bold text-lg whitespace-nowrap">{t.price}</span>
+                <span className="font-body text-foreground font-medium text-xs sm:text-sm">{t.name}</span>
+                <span className="font-display text-primary font-bold text-base sm:text-lg whitespace-nowrap">{t.price}</span>
               </motion.div>
             ))}
           </div>
@@ -134,7 +134,8 @@ const InfoSection = () => {
             href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-primary text-primary-foreground font-display text-xl px-12 py-5 rounded-lg tracking-wider hover:brightness-110 transition-all animate-pulse-glow"
+            className="inline-block bg-primary text-primary-foreground font-display text-xl px-12 py-5 rounded-lg tracking-wider hover:brightness-110 transition-all animate-[pulse-glow_2.5s_ease-in-out_infinite]"
+            style={{ animation: "pulse-glow 2.5s ease-in-out infinite" }}
           >
             JETZT TICKETS SICHERN
           </a>

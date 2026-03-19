@@ -64,12 +64,12 @@ const LineupSection = () => {
               transition={{ duration: 0.5, delay: di * 0.15 }}
               className="card-rugged rounded-lg overflow-hidden"
             >
-              <div className="bg-primary/10 border-b border-border px-6 py-4 flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-primary shrink-0" />
-                <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-wider">
+              <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                <h3 className="font-display text-base sm:text-2xl font-semibold tracking-wider">
                   {day.day}
                 </h3>
-                <span className="text-muted-foreground font-body text-sm ml-auto">
+                <span className="text-muted-foreground font-body text-xs sm:text-sm ml-auto">
                   {day.date}
                 </span>
               </div>
@@ -78,12 +78,12 @@ const LineupSection = () => {
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-6 py-5 hover:bg-primary/5 transition-colors"
+                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors"
                   >
-                    <span className="font-body text-primary font-semibold text-sm block mb-1">
+                    <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
                       {act.time}
                     </span>
-                    <span className="font-display text-xl sm:text-2xl font-bold tracking-wide">
+                    <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
                       {act.name}
                     </span>
                   </div>
