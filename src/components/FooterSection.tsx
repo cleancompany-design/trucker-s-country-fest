@@ -20,9 +20,9 @@ const FooterSection = () => {
             Datenschutz
           </Link>
           <Divider />
-          <span className="sm:px-4">DEKRA Lausitzring</span>
+          <a href="https://dekra-lausitzring.de/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">DEKRA Lausitzring</a>
           <Divider />
-          <span className="sm:px-4">© OVWA GmbH</span>
+          <a href="https://www.ovwa.de/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">© OVWA GmbH</a>
         </div>
 
         {/* Trademark notice */}
