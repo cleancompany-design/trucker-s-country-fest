@@ -134,7 +134,8 @@ const InfoSection = () => {
             href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-primary text-primary-foreground font-display text-xl px-12 py-5 rounded-lg tracking-wider hover:brightness-110 transition-all animate-pulse-glow"
+            className="inline-block bg-primary text-primary-foreground font-display text-xl px-12 py-5 rounded-lg tracking-wider hover:brightness-110 transition-all animate-[pulse-glow_2.5s_ease-in-out_infinite]"
+            style={{ animation: "pulse-glow 2.5s ease-in-out infinite" }}
           >
             JETZT TICKETS SICHERN
           </a>

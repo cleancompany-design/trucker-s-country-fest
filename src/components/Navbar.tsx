@@ -34,8 +34,11 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    // Delay scroll to allow mobile menu to close
+    setTimeout(() => {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
 
   return (

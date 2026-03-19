@@ -78,12 +78,12 @@ const LineupSection = () => {
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-6 py-5 hover:bg-primary/5 transition-colors"
+                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors"
                   >
-                    <span className="font-body text-primary font-semibold text-sm block mb-1">
+                    <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
                       {act.time}
                     </span>
-                    <span className="font-display text-xl sm:text-2xl font-bold tracking-wide">
+                    <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
                       {act.name}
                     </span>
                   </div>
