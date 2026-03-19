@@ -105,7 +105,7 @@ const InfoSection = () => {
             <Ticket className="inline w-6 h-6 text-primary mr-2 -mt-1" />
             Tickets im <span className="text-primary">Überblick</span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">
              {tickets.map((t, i) => (
               <motion.div
                 key={t.name}
