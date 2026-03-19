@@ -30,7 +30,7 @@ const days = [
 
 const LineupSection = () => {
   return (
-    <section className="relative py-14 sm:py-20 lg:py-28 px-4 overflow-hidden">
+    <section id="lineup" className="relative py-14 sm:py-20 lg:py-28 px-4 overflow-hidden scroll-mt-16">
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url(${lineupBg})` }}
