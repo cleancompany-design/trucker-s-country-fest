@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Flame, Dumbbell, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Flame, Dumbbell, X, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
