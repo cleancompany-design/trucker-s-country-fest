@@ -114,10 +114,10 @@ const InfoSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="card-rugged rounded-lg p-5 flex items-center justify-between gap-4"
+                className="card-rugged rounded-lg p-3 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4"
               >
-                <span className="font-body text-foreground font-medium text-sm">{t.name}</span>
-                <span className="font-display text-primary font-bold text-lg whitespace-nowrap">{t.price}</span>
+                <span className="font-body text-foreground font-medium text-xs sm:text-sm">{t.name}</span>
+                <span className="font-display text-primary font-bold text-base sm:text-lg whitespace-nowrap">{t.price}</span>
               </motion.div>
             ))}
           </div>
