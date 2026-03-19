@@ -38,7 +38,7 @@ const LineupSection = () => {
           alt=""
           className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
