@@ -1,0 +1,201 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Car, Clock, ExternalLink, X } from "lucide-react";
+import anfahrtKarte from "@/assets/anfahrt-karte.png";
+
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Lausitzallee+1,+01998+Schipkau";
+
+const parkingSpots = [
+  {
+    name: "Eventparkplatz (am Gelände)",
+    free: false,
+    fee: "kostenpflichtig",
+    walk: "2–5 Min.",
+  },
+  {
+    name: "LKW Parkplatz Autohof Klettwitz",
+    free: true,
+    fee: "kostenlos",
+    walk: "ca. 15 Min.",
+  },
+  {
+    name: "Parkplatz Aussichtsturm",
+    free: true,
+    fee: "kostenlos",
+    walk: "ca. 10 Min.",
+  },
+  {
+    name: "Parkhaus (Senftenberger See)",
+    free: false,
+    fee: "gebührenpflichtig",
+    walk: "ca. 20 Min.",
+  },
+  {
+    name: "Waldparkplatz Schipkau",
+    free: true,
+    fee: "kostenlos",
+    walk: "ca. 20 Min.",
+  },
+  {
+    name: "Parkplatz Am See",
+    free: true,
+    fee: "kostenlos",
+    walk: "ca. 25 Min.",
+  },
+];
+
+const AnfahrtSection = () => {
+  const [mapExpanded, setMapExpanded] = useState(false);
+
+  return (
+    <section id="anfahrt" className="py-20 sm:py-28 px-4">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
+            Anfahrt & <span className="text-primary">Parken</span>
+          </h2>
+          <div className="section-divider w-48 mx-auto" />
+        </motion.div>
+
+        {/* Address */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <div className="inline-flex items-center gap-2 text-primary mb-2">
+            <MapPin className="w-5 h-5" />
+            <span className="font-display text-xl tracking-wide">DEKRA Lausitzring</span>
+          </div>
+          <p className="text-foreground font-body text-lg">Lausitzallee 1, 01998 Schipkau</p>
+          <a
+            href={GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-3 text-primary hover:brightness-125 transition-all font-body"
+          >
+            Route in Google Maps öffnen
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </motion.div>
+
+        {/* Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <div
+            onClick={() => setMapExpanded(true)}
+            className="cursor-pointer card-rugged rounded-lg overflow-hidden hover:border-primary/50 transition-colors duration-300"
+          >
+            <img
+              src={anfahrtKarte}
+              alt="Anfahrtskarte zum DEKRA Lausitzring"
+              className="w-full h-64 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500"
+            />
+            <p className="text-center text-muted-foreground text-sm py-2 font-body">
+              Klicken zum Vergrößern
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Expanded map overlay */}
+        <AnimatePresence>
+          {mapExpanded && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center p-4 cursor-pointer"
+              onClick={() => setMapExpanded(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: "spring", damping: 25 }}
+                className="relative max-w-[95vw] max-h-[90vh]"
+              >
+                <button
+                  onClick={() => setMapExpanded(false)}
+                  className="absolute -top-4 -right-4 z-10 bg-primary text-primary-foreground rounded-full p-2 hover:brightness-110 transition-all"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <img
+                  src={anfahrtKarte}
+                  alt="Anfahrtskarte zum DEKRA Lausitzring"
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                />
+                <p className="text-center text-muted-foreground text-sm mt-2 font-body">
+                  Klicken zum Schließen
+                </p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Parking overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="font-display text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Car className="w-6 h-6 text-primary" />
+            Parkplätze in der Nähe
+          </h3>
+
+          <div className="grid gap-3">
+            {parkingSpots.map((spot, i) => (
+              <motion.div
+                key={spot.name}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="card-rugged rounded-lg p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+              >
+                <div className="flex items-center gap-3">
+                  <Car className="w-4 h-4 text-primary shrink-0" />
+                  <span className="font-body text-foreground font-medium">{spot.name}</span>
+                </div>
+                <div className="flex items-center gap-4 sm:gap-6 ml-7 sm:ml-0">
+                  <span
+                    className={`text-sm font-body font-semibold px-2 py-0.5 rounded ${
+                      spot.free
+                        ? "bg-primary/15 text-primary"
+                        : "bg-destructive/15 text-destructive"
+                    }`}
+                  >
+                    {spot.fee}
+                  </span>
+                  <span className="flex items-center gap-1 text-muted-foreground text-sm font-body">
+                    <Clock className="w-3.5 h-3.5" />
+                    {spot.walk}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-muted-foreground text-sm mt-4 font-body">
+            * Gehzeiten sind Richtwerte vom jeweiligen Parkplatz zum Festivalgelände.
+            Änderungen vorbehalten.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default AnfahrtSection;
