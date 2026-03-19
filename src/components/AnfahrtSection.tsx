@@ -145,7 +145,7 @@ const AnfahrtSection = () => {
               ))}
             </div>
 
-            <p className="text-muted-foreground text-[10px] sm:text-xs mt-3 sm:mt-4 font-body leading-relaxed">
+            <p className="text-muted-foreground text-[9px] sm:text-[11px] mt-3 sm:mt-4 font-body leading-relaxed opacity-60">
               * Gehzeiten sind Richtwerte vom jeweiligen Parkplatz zum Festivalgelände. Änderungen vorbehalten.
               Angaben zu Parkgebühren ohne Gewähr – Informationen basieren auf Google Maps und können abweichen.
             </p>
