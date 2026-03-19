@@ -45,7 +45,7 @@ const LineupSection = () => {
           className="text-center mb-12 sm:mb-16 pt-10 sm:pt-16"
         >
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4 text-glow">
-            <Music className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 -mt-1" />
+            <Music className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 align-middle" />
             Line-<span className="text-primary">Up</span>
           </h2>
           <p className="text-foreground/80 font-body text-base sm:text-lg max-w-2xl mx-auto mt-4">
