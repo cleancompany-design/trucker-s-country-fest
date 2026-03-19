@@ -98,15 +98,6 @@ const AnfahrtSection = () => {
                 </div>
                 <p className="text-muted-foreground font-body text-sm">Lausitzallee 1, 01998 Schipkau</p>
               </div>
-              <a
-                href={GOOGLE_MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:brightness-125 transition-all font-body text-sm whitespace-nowrap"
-              >
-                Maps
-                <ExternalLink className="w-4 h-4" />
-              </a>
             </div>
           </motion.div>
 
