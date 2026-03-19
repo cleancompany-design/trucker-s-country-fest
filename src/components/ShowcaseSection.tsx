@@ -22,7 +22,7 @@ const sections = [
 const ShowcaseSection = () => {
   return (
     <section id="programm" className="pt-8 sm:pt-12 pb-12 sm:pb-20 lg:pb-28 px-4 bg-secondary/30 scroll-mt-16">
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-20">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-14">
         {sections.map((s) => (
           <motion.div
             key={s.title}
