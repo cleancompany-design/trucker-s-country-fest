@@ -88,9 +88,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ delay: 2, duration: 1.5, repeat: Infinity }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center pt-2">
