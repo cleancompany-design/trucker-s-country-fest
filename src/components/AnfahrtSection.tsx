@@ -108,8 +108,7 @@ const AnfahrtSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Car className="w-6 h-6 text-primary" />
+            <h3 className="font-display text-2xl font-semibold mb-6">
               Parkplätze in der Nähe
             </h3>
 
