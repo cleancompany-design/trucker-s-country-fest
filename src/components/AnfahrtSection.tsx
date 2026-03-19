@@ -120,15 +120,15 @@ const AnfahrtSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="card-rugged rounded-lg p-3 sm:p-4 flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-2"
+                  className="card-rugged rounded-lg p-3 sm:p-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2"
                 >
                   <div className="flex items-start sm:items-center gap-2 sm:gap-3">
                     <Car className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
                     <span className="font-body text-foreground font-medium text-xs sm:text-sm leading-tight">{spot.name}</span>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-6 ml-5 sm:ml-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-6 ml-5 sm:ml-0">
                     <span
-                      className={`text-[10px] sm:text-sm font-body font-semibold px-1.5 sm:px-2 py-0.5 rounded whitespace-nowrap ${
+                      className={`text-[10px] sm:text-sm font-body font-semibold px-1.5 sm:px-2 py-0.5 rounded whitespace-nowrap w-fit ${
                         spot.free
                           ? "bg-primary/15 text-primary"
                           : "bg-destructive/15 text-destructive"
