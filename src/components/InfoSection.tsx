@@ -106,22 +106,19 @@ const InfoSection = () => {
             Tickets im <span className="text-primary">Überblick</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {tickets.map((t, i) => (
-              <motion.a
+             {tickets.map((t, i) => (
+              <motion.div
                 key={t.name}
-                href={TICKET_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="card-rugged rounded-lg p-5 flex items-center justify-between gap-4 hover:border-primary/50 transition-colors duration-300 cursor-pointer"
+                className="card-rugged rounded-lg p-5 flex items-center justify-between gap-4"
               >
                 <span className="font-body text-foreground font-medium text-sm">{t.name}</span>
                 <span className="font-display text-primary font-bold text-lg whitespace-nowrap">{t.price}</span>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </motion.div>

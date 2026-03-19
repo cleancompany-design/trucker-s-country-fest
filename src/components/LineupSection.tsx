@@ -31,13 +31,15 @@ const days = [
 const LineupSection = () => {
   return (
     <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
-      {/* Static background image */}
-      <img
-        src={lineupBg}
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover object-top"
-      />
-      <div className="absolute inset-0 bg-background/80" />
+      {/* Static background image – visible behind header, fades to black before cards */}
+      <div className="absolute inset-0">
+        <img
+          src={lineupBg}
+          alt=""
+          className="w-full h-[60%] object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
