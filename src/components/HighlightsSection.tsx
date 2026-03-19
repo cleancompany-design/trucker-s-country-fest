@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Users, Flame } from "lucide-react";
+import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Users, Flame, Zap, Dumbbell } from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
@@ -14,50 +14,50 @@ const highlights = [
   {
     icon: Trophy,
     title: "Truck Trial EM",
-    desc: "Internationale Teams steuern tonnenschwere Trucks durch extreme Offroad-Parcours. Hautnah miterleben!",
+    desc: "Internationale Teams manövrieren tonnenschwere Trucks durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen. Präzision und Teamarbeit hautnah!",
     img: hlTrucktrial,
   },
   {
     icon: Flame,
     title: "Show & Shine",
-    desc: "Die geilsten Showtrucks Europas im Contest – Chrome, Airbrush und PS-Wahnsinn vom Feinsten.",
+    desc: "Individuell gestaltete Showtrucks treten in verschiedenen Kategorien an – bewertet werden Gestaltung, Individualität und Gesamteindruck. Fahrzeuge aus nächster Nähe erleben!",
     img: hlShowshine,
   },
   {
     icon: Music,
     title: "Country Village",
-    desc: "Live-Musik, Line-Dance, Western-Spiele und Marktstände. Country-Feeling pur!",
+    desc: "Der atmosphärische Mittelpunkt des Festivals – Western-Flair mit Gastronomie, Live-Musik, Line-Dance und Marktständen. Country-Feeling pur!",
     img: hlCountry,
+  },
+  {
+    icon: Dumbbell,
+    title: "Stärkste Spedition",
+    desc: 'Bis zu 20 Speditionen kämpfen mit je sechs Teilnehmern um den Titel „Stärkste Spedition der Lausitz". Kraft, Geschicklichkeit und echter Teamgeist!',
+    img: hlFamily,
   },
   {
     icon: Axe,
     title: "Kettensägenkunst",
-    desc: "Live-Schnitzvorführungen – wenn aus rohem Holz Kunst entsteht. Handwerk hautnah.",
+    desc: "Live-Speedcarving – wenn aus rohem Holz in Minuten beeindruckende Kunstwerke entstehen. Handwerk hautnah erleben.",
     img: hlChainsaw,
   },
   {
     icon: Bird,
     title: "Falknerei",
-    desc: "Greifvogel-Flugshows über dem Festival. Adler, Falken und Bussarde im freien Flug.",
+    desc: "Eindrucksvolle Greifvogel-Flugshows über dem Festivalgelände. Adler, Falken und Bussarde im freien Flug – eine naturverbundene Erlebnisdimension.",
     img: hlFalconry,
   },
   {
     icon: ShoppingBag,
     title: "Aussteller & Händler",
-    desc: "Alles rund um Trucks, Outdoor & Lifestyle. Stöbern, entdecken, mitnehmen.",
+    desc: "Produkte und Dienstleistungen aus Trucks, Technik, Outdoor, Lifestyle und Handwerk. Dazu Cowboy- und Westernzubehör sowie Merchandise.",
     img: hlExhibitors,
   },
   {
     icon: Tent,
     title: "Camping",
-    desc: "Truck- & Country-Camp direkt am Gelände. Abends Lagerfeuer, morgens Motorengeräusche.",
+    desc: "Truck- & Country-Camp direkt am Gelände. Campingmöglichkeiten ab Freitag – abends Lagerfeuer, morgens Motorengeräusche.",
     img: hlCamping,
-  },
-  {
-    icon: Users,
-    title: "Familienprogramm",
-    desc: "Erlebnisbereiche für alle Altersgruppen. Hier kommt die ganze Familie auf ihre Kosten.",
-    img: hlFamily,
   },
 ];
 

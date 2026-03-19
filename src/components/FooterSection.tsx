@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Divider = () => (
   <span className="hidden sm:block w-px h-4 bg-primary/60" />
 );
@@ -10,17 +12,17 @@ const FooterSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm font-body text-muted-foreground flex-wrap">
           <span className="font-display text-base tracking-wider">TRUCK & COUNTRY FESTIVAL 2026</span>
           <Divider />
-          <a href="https://dekra-lausitzring.de/impressum/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">
+          <Link to="/impressum" className="hover:text-primary transition-colors sm:px-4">
             Impressum
-          </a>
+          </Link>
           <Divider />
-          <a href="https://dekra-lausitzring.de/datenschutz/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors sm:px-4">
+          <Link to="/datenschutz" className="hover:text-primary transition-colors sm:px-4">
             Datenschutz
-          </a>
+          </Link>
           <Divider />
           <span className="sm:px-4">DEKRA Lausitzring</span>
           <Divider />
-          <span className="sm:px-4">© DEKRA Lausitzring</span>
+          <span className="sm:px-4">© OVWA GmbH</span>
         </div>
 
         {/* Trademark notice */}

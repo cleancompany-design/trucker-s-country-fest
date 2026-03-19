@@ -7,14 +7,14 @@ const sections = [
     img: truckTrialImg,
     alt: "Truck Trial Europameisterschaft",
     title: "Truck Trial EM 2026",
-    text: "Internationale Teams steuern tonnenschwere Lastkraftwagen, historische Oldtimer-Lkw und leistungsstarke Zugmaschinen durch technisch anspruchsvolle Parcours mit Steilhängen, Verschränkungen, Gräben und Hindernissen. Präzision, Teamarbeit und pure Fahrzeugbeherrschung – aus nächster Nähe.",
+    text: "Im sportlichen Mittelpunkt steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks und leistungsstarke Zugmaschinen präzise durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen manövrieren. Ergänzt wird das Programm durch den großen Truck-Korso auf der Langstrecke des DEKRA Lausitzrings, die spektakuläre Monstertruckshow und die ¼ Meile – wo Trucks im direkten Beschleunigungsvergleich gegeneinander antreten.",
     reverse: false,
   },
   {
     img: countryVillageImg,
     alt: "Country Village mit Marktständen und Lichterketten",
     title: "Country Village",
-    text: "Wenn die Motoren leiser werden, dreht das Country Village auf. Live-Musik, Line-Dance, Western-Spiele und Marktstände laden zum Verweilen ein. Handwerksvorführungen, Kettensägenkunst und Greifvogel-Flugshows – hier trifft raue Trucker-Kultur auf entspannte Festivalatmosphäre.",
+    text: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität. Live-Musik, Line-Dance, Western-Spiele und Marktstände laden zum Verweilen ein. Handwerksvorführungen, Kettensägenkunst und Greifvogel-Flugshows – hier trifft raue Trucker-Kultur auf entspannte Festivalatmosphäre.",
     reverse: true,
   },
 ];
