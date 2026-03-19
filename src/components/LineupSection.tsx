@@ -31,12 +31,13 @@ const days = [
 const LineupSection = () => {
   return (
     <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
-      {/* Fixed-style background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed max-w-[1920px] mx-auto"
-        style={{ backgroundImage: `url(${lineupBg})` }}
+      {/* Static background image */}
+      <img
+        src={lineupBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-top"
       />
-      <div className="absolute inset-0 bg-background/85" />
+      <div className="absolute inset-0 bg-background/80" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div

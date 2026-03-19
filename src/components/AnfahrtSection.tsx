@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Car, Clock, ExternalLink, X, Navigation } from "lucide-react";
+import { MapPin, Car, Clock, X, Navigation } from "lucide-react";
 import anfahrtKarte from "@/assets/anfahrt-karte.png";
 
 const GOOGLE_MAPS_URL =
@@ -98,15 +98,6 @@ const AnfahrtSection = () => {
                 </div>
                 <p className="text-muted-foreground font-body text-sm">Lausitzallee 1, 01998 Schipkau</p>
               </div>
-              <a
-                href={GOOGLE_MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:brightness-125 transition-all font-body text-sm whitespace-nowrap"
-              >
-                Maps
-                <ExternalLink className="w-4 h-4" />
-              </a>
             </div>
           </motion.div>
 
