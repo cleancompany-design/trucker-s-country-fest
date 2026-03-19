@@ -85,7 +85,7 @@ const HighlightsSection = () => {
 
   return (
     <section className="py-20 sm:py-28 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,6 +96,9 @@ const HighlightsSection = () => {
             Was dich <span className="text-primary">erwartet</span>
           </h2>
           <div className="section-divider w-48 mx-auto" />
+          <p className="text-muted-foreground font-body text-sm mt-6">
+            Klicke auf ein Highlight für mehr Details
+          </p>
         </motion.div>
 
         <motion.div
@@ -126,7 +129,6 @@ const HighlightsSection = () => {
                   <h3 className="font-display text-lg font-semibold">{h.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.short}</p>
-                <p className="text-xs text-primary mt-2 font-body">Klicken für mehr →</p>
               </div>
             </motion.div>
           ))}

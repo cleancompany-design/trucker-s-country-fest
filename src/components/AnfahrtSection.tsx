@@ -4,44 +4,44 @@ import { MapPin, Car, Clock, ExternalLink, X } from "lucide-react";
 import anfahrtKarte from "@/assets/anfahrt-karte.png";
 
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=DEKRA+Lausitzring,+Lausitzallee+1,+Schipkau";
+  "https://www.google.com/maps/search/?api=1&query=DEKRA+Lausitzring+Schipkau";
 
 const parkingSpots = [
   {
     name: "Eventparkplatz (am Gelände)",
     free: false,
     fee: "kostenpflichtig",
-    walk: "2–5 Min.",
+    walk: "Laufweg: 2–5 Min.",
   },
   {
     name: "LKW Parkplatz Autohof Klettwitz",
     free: true,
     fee: "kostenlos",
-    walk: "ca. 15 Min.",
+    walk: "Laufweg: ca. 15 Min.",
   },
   {
     name: "Parkplatz Aussichtsturm",
     free: true,
     fee: "kostenlos",
-    walk: "ca. 10 Min.",
+    walk: "Laufweg: ca. 10 Min.",
   },
   {
     name: "Parkhaus (Senftenberger See)",
     free: false,
     fee: "gebührenpflichtig",
-    walk: "ca. 20 Min.",
+    walk: "Laufweg: ca. 20 Min.",
   },
   {
     name: "Waldparkplatz Schipkau",
     free: true,
     fee: "kostenlos",
-    walk: "ca. 20 Min.",
+    walk: "Laufweg: ca. 20 Min.",
   },
   {
     name: "Parkplatz Am See",
     free: true,
     fee: "kostenlos",
-    walk: "ca. 25 Min.",
+    walk: "Laufweg: ca. 25 Min.",
   },
 ];
 
@@ -50,7 +50,7 @@ const AnfahrtSection = () => {
 
   return (
     <section id="anfahrt" className="py-20 sm:py-28 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,27 +86,79 @@ const AnfahrtSection = () => {
           </a>
         </motion.div>
 
-        {/* Map */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div
-            onClick={() => setMapExpanded(true)}
-            className="cursor-pointer card-rugged rounded-lg overflow-hidden hover:border-primary/50 transition-colors duration-300"
+        {/* Two-column layout: Map + Parking */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Map */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            <img
-              src={anfahrtKarte}
-              alt="Anfahrtskarte zum DEKRA Lausitzring"
-              className="w-full h-64 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500"
-            />
-            <p className="text-center text-muted-foreground text-sm py-2 font-body">
-              Klicken zum Vergrößern
+            <div
+              onClick={() => setMapExpanded(true)}
+              className="cursor-pointer card-rugged rounded-lg overflow-hidden hover:border-primary/50 transition-colors duration-300 h-full"
+            >
+              <img
+                src={anfahrtKarte}
+                alt="Anfahrtskarte zum DEKRA Lausitzring"
+                className="w-full h-64 sm:h-80 lg:h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+              />
+              <p className="text-center text-muted-foreground text-sm py-2 font-body">
+                Klicken zum Vergrößern
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Parking overview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="font-display text-2xl font-semibold mb-6 flex items-center gap-2">
+              <Car className="w-6 h-6 text-primary" />
+              Parkplätze in der Nähe
+            </h3>
+
+            <div className="grid gap-3">
+              {parkingSpots.map((spot, i) => (
+                <motion.div
+                  key={spot.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="card-rugged rounded-lg p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+                >
+                  <div className="flex items-center gap-3">
+                    <Car className="w-4 h-4 text-primary shrink-0" />
+                    <span className="font-body text-foreground font-medium">{spot.name}</span>
+                  </div>
+                  <div className="flex items-center gap-4 sm:gap-6 ml-7 sm:ml-0">
+                    <span
+                      className={`text-sm font-body font-semibold px-2 py-0.5 rounded ${
+                        spot.free
+                          ? "bg-primary/15 text-primary"
+                          : "bg-destructive/15 text-destructive"
+                      }`}
+                    >
+                      {spot.fee}
+                    </span>
+                    <span className="flex items-center gap-1 text-muted-foreground text-sm font-body whitespace-nowrap">
+                      <Clock className="w-3.5 h-3.5" />
+                      {spot.walk}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <p className="text-muted-foreground text-sm mt-4 font-body">
+              * Gehzeiten sind Richtwerte vom jeweiligen Parkplatz zum Festivalgelände.
+              Änderungen vorbehalten.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Expanded map overlay */}
         <AnimatePresence>
@@ -143,56 +195,6 @@ const AnfahrtSection = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Parking overview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="font-display text-2xl font-semibold mb-6 flex items-center gap-2">
-            <Car className="w-6 h-6 text-primary" />
-            Parkplätze in der Nähe
-          </h3>
-
-          <div className="grid gap-3">
-            {parkingSpots.map((spot, i) => (
-              <motion.div
-                key={spot.name}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="card-rugged rounded-lg p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
-              >
-                <div className="flex items-center gap-3">
-                  <Car className="w-4 h-4 text-primary shrink-0" />
-                  <span className="font-body text-foreground font-medium">{spot.name}</span>
-                </div>
-                <div className="flex items-center gap-4 sm:gap-6 ml-7 sm:ml-0">
-                  <span
-                    className={`text-sm font-body font-semibold px-2 py-0.5 rounded ${
-                      spot.free
-                        ? "bg-primary/15 text-primary"
-                        : "bg-destructive/15 text-destructive"
-                    }`}
-                  >
-                    {spot.fee}
-                  </span>
-                  <span className="flex items-center gap-1 text-muted-foreground text-sm font-body">
-                    <Clock className="w-3.5 h-3.5" />
-                    {spot.walk}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="text-muted-foreground text-sm mt-4 font-body">
-            * Gehzeiten sind Richtwerte vom jeweiligen Parkplatz zum Festivalgelände.
-            Änderungen vorbehalten.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
