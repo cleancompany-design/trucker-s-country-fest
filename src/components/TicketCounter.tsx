@@ -31,18 +31,18 @@ const TicketCounter = () => {
   }, []);
 
   return (
-    <div className="flex items-center gap-2 text-sm font-body leading-none">
-      <Ticket className="w-4 h-4 text-primary shrink-0" />
-      <span className="text-muted-foreground">Noch</span>
+    <div className="inline-flex items-center justify-center gap-2 text-sm font-body leading-none">
+      <Ticket className="w-4 h-4 text-primary shrink-0 self-center" />
+      <span className="inline-flex items-center text-muted-foreground leading-none">Noch</span>
       <motion.span
         key={display}
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
-        className="font-display font-bold text-primary"
+        className="inline-flex items-center font-display font-bold text-primary leading-none"
       >
         {display}
       </motion.span>
-      <span className="text-muted-foreground">Tickets verfügbar</span>
+      <span className="inline-flex items-center text-muted-foreground leading-none">Tickets verfügbar</span>
     </div>
   );
 };
