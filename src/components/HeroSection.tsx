@@ -51,14 +51,15 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="flex items-center justify-center gap-6 mb-10 text-muted-foreground"
+          className="flex items-center justify-center gap-6 mb-10"
+          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)" }}
         >
-          <span className="flex items-center gap-2 font-body">
-            <MapPin className="w-4 h-4 text-primary" />
+          <span className="flex items-center gap-2 font-body text-foreground/90">
+            <MapPin className="w-4 h-4 text-primary drop-shadow-lg" />
             DEKRA Lausitzring
           </span>
-          <span className="flex items-center gap-2 font-body">
-            <Calendar className="w-4 h-4 text-primary" />
+          <span className="flex items-center gap-2 font-body text-foreground/90">
+            <Calendar className="w-4 h-4 text-primary drop-shadow-lg" />
             2,5 Tage Action
           </span>
         </motion.div>
@@ -87,9 +88,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ delay: 2, duration: 1.5, repeat: Infinity }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center pt-2">

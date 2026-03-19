@@ -43,7 +43,7 @@ const ShowcaseSection = () => {
                 <img
                   src={s.img}
                   alt={s.alt}
-                  className="w-full h-44 sm:h-56 lg:h-80 object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-44 sm:h-56 lg:h-80 object-cover object-center hover:scale-105 transition-transform duration-700 aspect-video"
                 />
               </div>
             </motion.div>
