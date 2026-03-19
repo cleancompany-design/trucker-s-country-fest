@@ -59,7 +59,7 @@ const InfoSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            <Info className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 -mt-1" />
+            <Info className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 align-middle" />
             Alle <span className="text-primary">Infos</span>
           </h2>
           <div className="section-divider w-48 mx-auto" />
@@ -103,7 +103,7 @@ const InfoSection = () => {
           className="mt-20"
         >
           <h3 className="font-display text-2xl sm:text-3xl font-semibold text-center mb-10">
-            <Ticket className="inline w-6 h-6 text-primary mr-2 -mt-1" />
+            <Ticket className="inline w-6 h-6 text-primary mr-2 align-middle" />
             Tickets im <span className="text-primary">Überblick</span>
           </h3>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">

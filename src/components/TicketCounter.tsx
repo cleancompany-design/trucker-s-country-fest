@@ -32,7 +32,7 @@ const TicketCounter = () => {
 
   return (
     <div className="flex items-center gap-2 text-sm font-body leading-none">
-      <Ticket className="w-4 h-4 text-primary" />
+      <Ticket className="w-4 h-4 text-primary shrink-0" />
       <span className="text-muted-foreground">Noch</span>
       <motion.span
         key={display}
