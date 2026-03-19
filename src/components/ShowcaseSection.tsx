@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import truckTrialImg from "@/assets/truck-trial.jpg";
 import countryVillageImg from "@/assets/country-village.jpg";
 
@@ -7,23 +9,27 @@ const sections = [
     img: truckTrialImg,
     alt: "Truck Trial Europameisterschaft",
     title: "Truck Trial EM 2026",
-    text: "Im sportlichen Mittelpunkt steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks und leistungsstarke Zugmaschinen präzise durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen manövrieren. Ergänzt wird das Programm durch den großen Truck-Korso auf der Langstrecke des DEKRA Lausitzrings, die spektakuläre Monstertruckshow und die ¼ Meile – wo Trucks im direkten Beschleunigungsvergleich gegeneinander antreten.",
+    short: "Im sportlichen Mittelpunkt steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks durch Offroad-Sektionen manövrieren.",
+    full: " Ergänzt wird das Programm durch den großen Truck-Korso auf der Langstrecke des DEKRA Lausitzrings, die spektakuläre Monstertruckshow und die ¼ Meile – wo Trucks im direkten Beschleunigungsvergleich gegeneinander antreten.",
     reverse: false,
   },
   {
     img: countryVillageImg,
     alt: "Country Village mit Marktständen und Lichterketten",
     title: "Country Village",
-    text: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität. Live-Musik, Line-Dance, Western-Spiele und Marktstände laden zum Verweilen ein. Handwerksvorführungen, Kettensägenkunst und Greifvogel-Flugshows – hier trifft raue Trucker-Kultur auf entspannte Festivalatmosphäre.",
+    short: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
+    full: " Live-Musik, Line-Dance, Western-Spiele und Marktstände laden zum Verweilen ein. Handwerksvorführungen, Kettensägenkunst und Greifvogel-Flugshows – hier trifft raue Trucker-Kultur auf entspannte Festivalatmosphäre.",
     reverse: true,
   },
 ];
 
 const ShowcaseSection = () => {
+  const [expanded, setExpanded] = useState<Record<number, boolean>>({});
+
   return (
     <section id="programm" className="pt-8 sm:pt-12 pb-12 sm:pb-20 lg:pb-28 px-4 bg-secondary/30 scroll-mt-16">
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-14">
-        {sections.map((s) => (
+        {sections.map((s, idx) => (
           <motion.div
             key={s.title}
             initial={{ opacity: 0, x: s.reverse ? 60 : -60 }}
@@ -58,9 +64,28 @@ const ShowcaseSection = () => {
                 {s.title}
               </h2>
               <div className="section-divider w-24 mb-4 sm:mb-6" />
-              <p className="text-muted-foreground font-body text-sm sm:text-base lg:text-lg leading-relaxed">
-                {s.text}
+
+              {/* Desktop: full text */}
+              <p className="hidden lg:block text-muted-foreground font-body text-lg leading-relaxed">
+                {s.short}{s.full}
               </p>
+
+              {/* Mobile/Tablet: collapsible */}
+              <div className="lg:hidden">
+                <p className="text-muted-foreground font-body text-sm sm:text-base leading-relaxed">
+                  {s.short}
+                  {expanded[idx] && <span>{s.full}</span>}
+                </p>
+                <button
+                  onClick={() => setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }))}
+                  className="mt-2 flex items-center gap-1 text-primary font-body text-sm hover:brightness-125 transition-all"
+                >
+                  {expanded[idx] ? "Weniger anzeigen" : "Mehr lesen"}
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${expanded[idx] ? "rotate-180" : ""}`}
+                  />
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         ))}
