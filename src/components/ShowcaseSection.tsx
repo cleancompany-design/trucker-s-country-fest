@@ -22,8 +22,8 @@ const sections = [
 const ShowcaseSection = () => {
   return (
     <section className="py-20 sm:py-28 px-4 bg-secondary/30">
-      <div className="max-w-6xl mx-auto space-y-20">
-        {sections.map((s, i) => (
+      <div className="max-w-7xl mx-auto space-y-20">
+        {sections.map((s) => (
           <motion.div
             key={s.title}
             initial={{ opacity: 0, x: s.reverse ? 60 : -60 }}

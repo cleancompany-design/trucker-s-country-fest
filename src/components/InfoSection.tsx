@@ -39,10 +39,19 @@ const infoCards = [
   },
 ];
 
+const tickets = [
+  { name: "Konzertticket: The Cashbags (Fr)", price: "€15,00" },
+  { name: "Konzertticket: Alina Sebastian & Truck Stop (Sa)", price: "€29,00" },
+  { name: "Tagesticket", price: "ab €25,00" },
+  { name: "Wochenendticket", price: "ab €40,00" },
+  { name: "Wochenendticket (Truck-Anmeldung)", price: "ab €15,00" },
+  { name: "Wochenendticket (Camping)", price: "ab €24,00" },
+];
+
 const InfoSection = () => {
   return (
     <section className="py-20 sm:py-28 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +64,7 @@ const InfoSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {infoCards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -73,26 +82,56 @@ const InfoSection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-5 pt-4 flex gap-4">
-                <div className="shrink-0 flex items-start gap-2 min-w-[110px]">
-                  <card.icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <h3 className="font-display text-lg font-semibold leading-tight">{card.title}</h3>
+              <div className="p-5 pt-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <card.icon className="w-5 h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                 </div>
-                <div>
-                  <p className="text-foreground font-body text-lg">{card.line1}</p>
-                  <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
-                </div>
+                <p className="text-foreground font-body text-base">{card.line1}</p>
+                <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Ticket overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-center mb-8">
+            <Ticket className="inline w-6 h-6 text-primary mr-2 -mt-1" />
+            Tickets im <span className="text-primary">Überblick</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {tickets.map((t, i) => (
+              <motion.a
+                key={t.name}
+                href={TICKET_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="card-rugged rounded-lg p-5 flex items-center justify-between gap-4 hover:border-primary/50 transition-colors duration-300 cursor-pointer"
+              >
+                <span className="font-body text-foreground font-medium text-sm">{t.name}</span>
+                <span className="font-display text-primary font-bold text-lg whitespace-nowrap">{t.price}</span>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12"
         >
           <a
             href={TICKET_URL}

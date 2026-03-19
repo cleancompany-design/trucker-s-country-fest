@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Music, Calendar } from "lucide-react";
+import lineupBg from "@/assets/lineup-bg.jpg";
 
 const days = [
   {
@@ -29,8 +30,15 @@ const days = [
 
 const LineupSection = () => {
   return (
-    <section className="py-20 sm:py-28 px-4 bg-secondary/30">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
+      {/* Fixed-style background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${lineupBg})` }}
+      />
+      <div className="absolute inset-0 bg-background/85" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +55,7 @@ const LineupSection = () => {
           <div className="section-divider w-48 mx-auto mt-6" />
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {days.map((day, di) => (
             <motion.div
               key={day.day}
@@ -57,7 +65,6 @@ const LineupSection = () => {
               transition={{ duration: 0.5, delay: di * 0.15 }}
               className="card-rugged rounded-lg overflow-hidden"
             >
-              {/* Day header */}
               <div className="bg-primary/10 border-b border-border px-6 py-4 flex items-center gap-3">
                 <Calendar className="w-5 h-5 text-primary shrink-0" />
                 <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-wider">
@@ -68,14 +75,13 @@ const LineupSection = () => {
                 </span>
               </div>
 
-              {/* Acts */}
               <div className="divide-y divide-border">
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 hover:bg-primary/5 transition-colors"
+                    className="px-6 py-5 hover:bg-primary/5 transition-colors"
                   >
-                    <span className="font-body text-primary font-semibold text-sm sm:text-base whitespace-nowrap min-w-[180px]">
+                    <span className="font-body text-primary font-semibold text-sm block mb-1">
                       {act.time}
                     </span>
                     <span className="font-display text-xl sm:text-2xl font-bold tracking-wide">
