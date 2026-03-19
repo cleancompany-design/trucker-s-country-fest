@@ -32,7 +32,7 @@ const LineupSection = () => {
   return (
     <section className="relative py-14 sm:py-20 lg:py-28 px-4 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url(${lineupBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/65 to-background" />
