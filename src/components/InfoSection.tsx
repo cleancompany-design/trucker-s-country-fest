@@ -64,8 +64,47 @@ const InfoSection = () => {
               Alle <span className="text-primary">Infos</span>
             </span>
           </h2>
-...
-          <h3 className="flex items-center justify-center gap-2 font-display text-2xl sm:text-3xl font-semibold text-center mb-10">
+          <div className="section-divider w-48 mx-auto" />
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+          {infoCards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
+              className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
+            >
+              <div className="relative h-36 overflow-hidden">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-5 pt-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <card.icon className="w-5 h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                </div>
+                <p className="text-foreground font-body text-base">{card.line1}</p>
+                <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Ticket overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h3 className="flex items-center justify-center gap-2 font-display text-2xl sm:text-3xl font-semibold mb-10">
             <Ticket className="w-6 h-6 text-primary shrink-0" />
             <span>
               Tickets im <span className="text-primary">Überblick</span>
