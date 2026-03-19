@@ -116,7 +116,7 @@ const HighlightsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5"
         >
           {highlights.map((h, i) => (
             <motion.div
@@ -126,19 +126,19 @@ const HighlightsSection = () => {
               onClick={() => setSelected(i)}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
-              <div className="relative h-44 overflow-hidden">
+              <div className="relative h-28 sm:h-36 lg:h-44 overflow-hidden">
                 <img
                   src={h.img}
                   alt={h.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
-              <div className="p-5 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <h.icon className="w-5 h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-lg font-semibold">{h.title}</h3>
+              <div className="p-3 sm:p-5 sm:pt-4">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <h.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{h.title}</h3>
                 </div>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">{h.short}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
               </div>
             </motion.div>
           ))}
