@@ -44,8 +44,8 @@ const tickets = [
   { name: "Konzertticket: Alina Sebastian & Truck Stop (Sa)", price: "€29,00" },
   { name: "Tagesticket", price: "ab €25,00" },
   { name: "Wochenendticket", price: "ab €40,00" },
-  { name: "Wochenendticket (Truck-Anmeldung)", price: "ab €15,00" },
-  { name: "Wochenendticket (Camping)", price: "ab €24,00" },
+  { name: "Wochenendticket inkl. Truck-Anmeldung", price: "ab €15,00" },
+  { name: "Wochenendticket inkl. Camping", price: "ab €24,00" },
 ];
 
 const InfoSection = () => {
@@ -99,9 +99,9 @@ const InfoSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16"
+          className="mt-20"
         >
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-center mb-8">
+          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-center mb-10">
             <Ticket className="inline w-6 h-6 text-primary mr-2 -mt-1" />
             Tickets im <span className="text-primary">Überblick</span>
           </h3>
@@ -131,7 +131,7 @@ const InfoSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-14"
         >
           <a
             href={TICKET_URL}

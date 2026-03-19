@@ -33,7 +33,7 @@ const LineupSection = () => {
     <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
       {/* Fixed-style background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed max-w-[1920px] mx-auto"
         style={{ backgroundImage: `url(${lineupBg})` }}
       />
       <div className="absolute inset-0 bg-background/85" />
