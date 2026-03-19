@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Car, Clock, ExternalLink, X } from "lucide-react";
+import { MapPin, Car, Clock, ExternalLink, X, Navigation } from "lucide-react";
 import anfahrtKarte from "@/assets/anfahrt-karte.png";
 
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=DEKRA+Lausitzring+Schipkau";
+  "https://www.google.com/maps/place/DEKRA+Lausitzring/@51.5245,13.9975,14z";
 
 const parkingSpots = [
   {
@@ -63,49 +63,50 @@ const AnfahrtSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        {/* Address */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <div className="inline-flex items-center gap-2 text-primary mb-2">
-            <MapPin className="w-5 h-5" />
-            <span className="font-display text-xl tracking-wide">DEKRA Lausitzring</span>
-          </div>
-          <p className="text-foreground font-body text-lg">Lausitzallee 1, 01998 Schipkau</p>
-          <a
-            href={GOOGLE_MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-primary hover:brightness-125 transition-all font-body"
-          >
-            Route in Google Maps öffnen
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </motion.div>
-
         {/* Two-column layout: Map + Parking */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Map */}
+          {/* Map + Address combined */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="flex flex-col"
           >
             <div
               onClick={() => setMapExpanded(true)}
-              className="cursor-pointer card-rugged rounded-lg overflow-hidden hover:border-primary/50 transition-colors duration-300 h-full"
+              className="cursor-pointer card-rugged rounded-lg overflow-hidden hover:border-primary/50 transition-colors duration-300 flex-1"
             >
               <img
                 src={anfahrtKarte}
                 alt="Anfahrtskarte zum DEKRA Lausitzring"
-                className="w-full h-64 sm:h-80 lg:h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+                className="w-full h-64 sm:h-80 lg:h-[320px] object-cover hover:scale-[1.02] transition-transform duration-500"
               />
               <p className="text-center text-muted-foreground text-sm py-2 font-body">
                 Klicken zum Vergrößern
               </p>
+            </div>
+
+            {/* Address card below map */}
+            <div className="card-rugged rounded-lg p-5 mt-4 flex items-center gap-4">
+              <div className="bg-primary/15 rounded-full p-3 shrink-0">
+                <Navigation className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <MapPin className="w-4 h-4 text-primary shrink-0" />
+                  <span className="font-display text-lg tracking-wide">DEKRA Lausitzring</span>
+                </div>
+                <p className="text-muted-foreground font-body text-sm">Lausitzallee 1, 01998 Schipkau</p>
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:brightness-125 transition-all font-body text-sm whitespace-nowrap"
+              >
+                Maps
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </motion.div>
 

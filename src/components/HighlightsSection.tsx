@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Flame, Dumbbell, X } from "lucide-react";
+import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Flame, Dumbbell, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
@@ -9,7 +9,7 @@ import hlChainsaw from "@/assets/hl-chainsaw.jpg";
 import hlFalconry from "@/assets/hl-falconry.jpg";
 import hlExhibitors from "@/assets/hl-exhibitors.jpg";
 import hlCamping from "@/assets/hl-camping.jpg";
-import hlFamily from "@/assets/hl-family.jpg";
+import hlStrength from "@/assets/hl-strength.jpg";
 
 const highlights = [
   {
@@ -38,7 +38,7 @@ const highlights = [
     title: "Stärkste Spedition",
     short: "Speditionen kämpfen um den Titel der Stärksten.",
     desc: 'Bis zu 20 Speditionen kämpfen mit je sechs Teilnehmern um den Titel „Stärkste Spedition der Lausitz". Kraft, Geschicklichkeit und echter Teamgeist!',
-    img: hlFamily,
+    img: hlStrength,
   },
   {
     icon: Axe,
@@ -82,6 +82,16 @@ const getItemVariant = (index: number) => ({
 
 const HighlightsSection = () => {
   const [selected, setSelected] = useState<number | null>(null);
+
+  const goNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selected !== null) setSelected((selected + 1) % highlights.length);
+  };
+
+  const goPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selected !== null) setSelected((selected - 1 + highlights.length) % highlights.length);
+  };
 
   return (
     <section className="py-20 sm:py-28 px-4">
@@ -145,12 +155,29 @@ const HighlightsSection = () => {
             className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center p-4 cursor-pointer"
             onClick={() => setSelected(null)}
           >
+            {/* Prev arrow */}
+            <button
+              onClick={goPrev}
+              className="absolute left-4 sm:left-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Next arrow */}
+            <button
+              onClick={goNext}
+              className="absolute right-4 sm:right-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
             <motion.div
+              key={selected}
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-2xl w-full card-rugged rounded-lg overflow-hidden cursor-default"
+              className="relative max-w-3xl w-full card-rugged rounded-lg overflow-hidden cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -162,18 +189,18 @@ const HighlightsSection = () => {
               <img
                 src={highlights[selected].img}
                 alt={highlights[selected].title}
-                className="w-full h-56 sm:h-72 object-cover"
+                className="w-full h-64 sm:h-80 object-cover"
               />
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  {(() => { const Icon = highlights[selected].icon; return <Icon className="w-6 h-6 text-primary" />; })()}
-                  <h3 className="font-display text-2xl font-bold">{highlights[selected].title}</h3>
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  {(() => { const Icon = highlights[selected].icon; return <Icon className="w-7 h-7 text-primary" />; })()}
+                  <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-wide">{highlights[selected].title}</h3>
                 </div>
-                <p className="text-muted-foreground font-body text-base leading-relaxed">
+                <p className="text-muted-foreground font-body text-lg leading-relaxed">
                   {highlights[selected].desc}
                 </p>
               </div>
-              <p className="text-center text-muted-foreground text-sm pb-4 font-body">
+              <p className="text-center text-muted-foreground text-xs pb-4 font-body">
                 Klicken zum Schließen
               </p>
             </motion.div>
