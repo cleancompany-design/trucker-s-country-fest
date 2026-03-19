@@ -59,7 +59,7 @@ const InfoSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            <Info className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 -mt-1" />
+            <Info className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 align-middle" />
             Alle <span className="text-primary">Infos</span>
           </h2>
           <div className="section-divider w-48 mx-auto" />
