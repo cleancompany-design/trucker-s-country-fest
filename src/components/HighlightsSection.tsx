@@ -32,7 +32,7 @@ const highlights = [
   {
     icon: Dumbbell,
     title: "Stärkste Spedition",
-    desc: "Bis zu 20 Speditionen kämpfen mit je sechs Teilnehmern um den Titel „Stärkste Spedition der Lausitz". Kraft, Geschicklichkeit und echter Teamgeist!",
+    desc: 'Bis zu 20 Speditionen kämpfen mit je sechs Teilnehmern um den Titel „Stärkste Spedition der Lausitz". Kraft, Geschicklichkeit und echter Teamgeist!',
     img: hlFamily,
   },
   {
