@@ -4,7 +4,7 @@ import { MapPin, Car, Clock, ExternalLink, X } from "lucide-react";
 import anfahrtKarte from "@/assets/anfahrt-karte.png";
 
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Lausitzallee+1,+01998+Schipkau";
+  "https://www.google.com/maps/dir/?api=1&destination=DEKRA+Lausitzring,+Lausitzallee+1,+Schipkau";
 
 const parkingSpots = [
   {
