@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Car, Clock, ExternalLink, X, Navigation } from "lucide-react";
+import { MapPin, Car, Clock, X, Navigation } from "lucide-react";
 import anfahrtKarte from "@/assets/anfahrt-karte.png";
 
 const GOOGLE_MAPS_URL =
