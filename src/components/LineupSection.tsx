@@ -39,7 +39,7 @@ const LineupSection = () => {
               alt=""
               className="w-full h-full object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/45 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/90" />
           </div>
 
           <motion.div
