@@ -21,8 +21,8 @@ const sections = [
 
 const ShowcaseSection = () => {
   return (
-    <section className="py-20 sm:py-28 px-4 bg-secondary/30">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section className="py-12 sm:py-20 lg:py-28 px-4 bg-secondary/30">
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-20">
         {sections.map((s) => (
           <motion.div
             key={s.title}
@@ -30,7 +30,7 @@ const ShowcaseSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" as const }}
-            className={`flex flex-col ${s.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}
+            className={`flex flex-col ${s.reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-4 sm:gap-8 lg:gap-12 items-center`}
           >
             <motion.div
               className="lg:w-1/2"
@@ -43,7 +43,7 @@ const ShowcaseSection = () => {
                 <img
                   src={s.img}
                   alt={s.alt}
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-48 sm:h-64 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </motion.div>
@@ -54,11 +54,11 @@ const ShowcaseSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-4">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
                 {s.title}
               </h2>
-              <div className="section-divider w-24 mb-6" />
-              <p className="text-muted-foreground font-body text-lg leading-relaxed">
+              <div className="section-divider w-24 mb-4 sm:mb-6" />
+              <p className="text-muted-foreground font-body text-sm sm:text-base lg:text-lg leading-relaxed">
                 {s.text}
               </p>
             </motion.div>

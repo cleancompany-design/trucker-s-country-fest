@@ -30,7 +30,7 @@ const days = [
 
 const LineupSection = () => {
   return (
-    <section className="relative py-20 sm:py-28 px-4 overflow-hidden">
+    <section className="relative py-14 sm:py-20 lg:py-28 px-4 overflow-hidden">
       {/* Static background image – visible behind header, fades to black before cards */}
       <div className="absolute inset-0">
         <img
