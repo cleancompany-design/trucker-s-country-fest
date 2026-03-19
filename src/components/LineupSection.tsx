@@ -30,34 +30,36 @@ const days = [
 
 const LineupSection = () => {
   return (
-    <section className="relative py-14 sm:py-20 lg:py-28 px-4 overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="relative mb-12 sm:mb-16 overflow-hidden rounded-lg">
-          <div className="absolute inset-0">
-            <img
-              src={lineupBg}
-              alt=""
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background/90" />
-          </div>
+    <section className="px-4 overflow-hidden">
+      {/* Hero banner with background image */}
+      <div className="relative w-full">
+        <img
+          src={lineupBg}
+          alt=""
+          className="w-full h-[350px] sm:h-[400px] lg:h-[450px] object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
 
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative z-10 text-center px-4 py-20 sm:py-24 lg:py-28"
+            className="text-center px-4"
           >
-            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4 text-glow">
               <Music className="inline w-8 h-8 sm:w-10 sm:h-10 text-primary mr-3 -mt-1" />
               Line-<span className="text-primary">Up</span>
             </h2>
-            <p className="text-muted-foreground font-body text-base sm:text-lg max-w-2xl mx-auto mt-4">
+            <p className="text-foreground/80 font-body text-base sm:text-lg max-w-2xl mx-auto mt-4">
               Live-Acts aus dem Country-Bereich sorgen an allen drei Tagen für stimmungsvolle Abendunterhaltung und echte Festivalatmosphäre.
             </p>
             <div className="section-divider w-48 mx-auto mt-6" />
           </motion.div>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto py-10 sm:py-14 lg:py-16">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {days.map((day, di) => (
