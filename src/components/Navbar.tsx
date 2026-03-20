@@ -9,8 +9,8 @@ const navLinks = [
   { label: "Highlights", href: "#highlights" },
   { label: "Programm", href: "#programm" },
   { label: "Line-Up", href: "#lineup" },
-  { label: "Infos & Tickets", href: "#infos" },
   { label: "Anfahrt", href: "#anfahrt" },
+  { label: "Infos & Tickets", href: "#infos" },
 ];
 
 const Navbar = () => {
