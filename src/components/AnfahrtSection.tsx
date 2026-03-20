@@ -7,7 +7,7 @@ const AnfahrtSection = () => {
   const [mapExpanded, setMapExpanded] = useState(false);
 
   return (
-    <section id="anfahrt" className="py-20 sm:py-28 px-4">
+    <section id="anfahrt" className="py-20 sm:py-28 pb-28 sm:pb-36 px-4 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
