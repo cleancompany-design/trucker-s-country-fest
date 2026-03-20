@@ -56,7 +56,7 @@ const LineupSection = () => {
           <div className="section-divider w-48 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
           {days.map((day, di) => (
             <motion.div
               key={day.day}
