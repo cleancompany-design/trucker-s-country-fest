@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
 import dekraLogo from "@/assets/dekra-logo.png";
+import ovwaLogo from "@/assets/ovwa-logo.png";
 import Countdown from "./Countdown";
 import { Calendar, MapPin } from "lucide-react";
 
