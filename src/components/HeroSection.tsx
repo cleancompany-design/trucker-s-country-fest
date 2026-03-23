@@ -19,8 +19,9 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
-      {/* DEKRA Logo top-left */}
-      <div className="absolute top-6 left-6 z-20">
+      {/* Logos top-left */}
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-3">
+        <img src={ovwaLogo} alt="OVWA" className="h-10 sm:h-14 opacity-90" />
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
 
