@@ -53,7 +53,8 @@ const Navbar = () => {
           className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-lg"
         >
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14 sm:h-16">
-            <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="shrink-0">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="shrink-0 flex items-center gap-2">
+              <img src={ovwaLogo} alt="OVWA" className="h-7 sm:h-9" />
               <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-8 sm:h-10" />
             </button>
 
