@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
 import dekraLogo from "@/assets/dekra-logo.png";
+import ovwaLogo from "@/assets/ovwa-logo.png";
 import Countdown from "./Countdown";
 import { Calendar, MapPin } from "lucide-react";
 
@@ -18,8 +19,9 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
-      {/* DEKRA Logo top-left */}
-      <div className="absolute top-6 left-6 z-20">
+      {/* Logos top-left */}
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-3">
+        <img src={ovwaLogo} alt="OVWA" className="h-10 sm:h-14 opacity-90" />
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
 
@@ -30,7 +32,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-foreground font-display text-lg sm:text-xl tracking-[0.3em] mb-4 font-semibold"
+          className="text-foreground font-display text-xl sm:text-2xl lg:text-3xl tracking-[0.3em] mb-4 font-semibold"
         >
           07. – 09. AUGUST 2026
         </motion.p>
@@ -42,9 +44,7 @@ const HeroSection = () => {
           className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6"
           style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.5)" }}
         >
-          TRUCK &<br />
-          <span className="text-primary text-glow">COUNTRY</span>
-          <br />FESTIVAL
+          <span className="text-primary text-glow">TRUCK & COUNTRY FESTIVAL</span>
         </motion.h1>
 
         <motion.div
