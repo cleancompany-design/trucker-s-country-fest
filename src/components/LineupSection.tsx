@@ -91,7 +91,7 @@ const LineupSection = () => {
                         src={act.img}
                         alt={act.name}
                         loading="lazy"
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
                       />
                     )}
                     <div>
