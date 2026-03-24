@@ -30,7 +30,7 @@ const highlights = [
   {
     icon: Flame,
     title: "Show & Shine",
-    short: "Individuell gestaltete Showtrucks in verschiedenen Kategorien.",
+    short: "Individuell gestaltete Showtrucks.",
     desc: "Beim Show & Shine Truck Contest treten individuell gestaltete Showtrucks in verschiedenen Kategorien gegeneinander an, bewertet werden Gestaltung, Individualität und Gesamteindruck. Besucher erleben die Fahrzeuge aus nächster Nähe und tauschen sich direkt mit den Besitzern aus.",
     img: hlShowshine,
   },
