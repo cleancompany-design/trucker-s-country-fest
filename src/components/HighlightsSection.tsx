@@ -173,12 +173,12 @@ const HighlightsSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
-              <div className="p-3 sm:p-5 sm:pt-4">
-                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
-                  <h.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{h.title}</h3>
+              <div className="p-2 sm:p-3">
+                <div className="flex items-center gap-1.5 mb-0.5 sm:mb-1">
+                  <h.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
+                  <h3 className="font-display text-xs sm:text-sm font-semibold truncate">{h.title}</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
+                <p className="text-[10px] sm:text-xs text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
               </div>
             </motion.div>
           ))}
