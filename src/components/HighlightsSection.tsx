@@ -23,7 +23,7 @@ const highlights = [
   {
     icon: Trophy,
     title: "Truck Trial EM",
-    short: "Internationale Offroad-Meisterschaft mit tonnenschweren Trucks.",
+    short: "Internationale Offroad-Meisterschaft.",
     desc: "Im sportlichen Mittelpunkt des Truck und Country Festivals steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks und leistungsstarke Zugmaschinen präzise durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen manövrieren.",
     img: hlTrucktrial,
   },
