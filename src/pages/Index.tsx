@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HighlightsSection from "@/components/HighlightsSection";
-import ShowcaseSection from "@/components/ShowcaseSection";
+
 import LineupSection from "@/components/LineupSection";
 import AnfahrtSection from "@/components/AnfahrtSection";
 import InfoSection from "@/components/InfoSection";
