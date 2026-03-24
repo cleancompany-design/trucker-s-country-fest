@@ -72,7 +72,7 @@ const highlights = [
   {
     icon: Gamepad2,
     title: "RC Truck Trial",
-    short: "Offroad-Wettbewerb im Modellformat mit Fingerspitzengefühl.",
+    short: "Offroad-Wettbewerb im Modellformat.",
     desc: "Der RC Truck Trial überträgt die Faszination des Offroad-Wettbewerbs ins Modellformat und fordert Präzision, Technikverständnis und Fingerspitzengefühl. Auf einem anspruchsvollen Parcours treten detailgetreue RC-Trucks gegeneinander an und sorgen für Spannung im Kleinformat.",
     img: hlRctruck,
   },
