@@ -46,7 +46,7 @@ const LineupSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 pt-10 sm:pt-16"
+          className="text-center mb-10 sm:mb-12"
         >
           <h2 className="flex items-center justify-center gap-2 sm:gap-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-glow">
             <Music className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
