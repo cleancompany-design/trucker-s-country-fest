@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Trophy, Music, Tent, Axe, Bird, ShoppingBag, Flame, Dumbbell, X, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import {
+  Trophy, Flame, Music, Dumbbell, Axe, Bird, ShoppingBag,
+  Gamepad2, Truck, Mic, Gauge, Sparkles,
+  X, ChevronLeft, ChevronRight, Star,
+} from "lucide-react";
 
 import hlTrucktrial from "@/assets/hl-trucktrial.jpg";
 import hlShowshine from "@/assets/hl-showshine.jpg";
@@ -8,37 +12,48 @@ import hlCountry from "@/assets/hl-country.jpg";
 import hlChainsaw from "@/assets/hl-chainsaw.jpg";
 import hlFalconry from "@/assets/hl-falconry.jpg";
 import hlExhibitors from "@/assets/hl-exhibitors.jpg";
-import hlCamping from "@/assets/hl-camping.jpg";
 import hlStrength from "@/assets/hl-strength.jpg";
+import hlRctruck from "@/assets/hl-rctruck.jpg";
+import hlMonstertruck from "@/assets/hl-monstertruck.jpg";
+import hlKonzerte from "@/assets/hl-konzerte.jpg";
+import hlViertelmeile from "@/assets/hl-viertelmeile.jpg";
+import hlErlebniswelt from "@/assets/hl-erlebniswelt.jpg";
 
 const highlights = [
   {
     icon: Trophy,
     title: "Truck Trial EM",
     short: "Internationale Offroad-Meisterschaft mit tonnenschweren Trucks.",
-    desc: "Internationale Teams manövrieren tonnenschwere Trucks durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen. Präzision und Teamarbeit hautnah!",
+    desc: "Im sportlichen Mittelpunkt des Truck und Country Festivals steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks und leistungsstarke Zugmaschinen präzise durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen manövrieren.",
     img: hlTrucktrial,
   },
   {
     icon: Flame,
     title: "Show & Shine",
     short: "Individuell gestaltete Showtrucks in verschiedenen Kategorien.",
-    desc: "Individuell gestaltete Showtrucks treten in verschiedenen Kategorien an – bewertet werden Gestaltung, Individualität und Gesamteindruck. Fahrzeuge aus nächster Nähe erleben!",
+    desc: "Beim Show & Shine Truck Contest treten individuell gestaltete Showtrucks in verschiedenen Kategorien gegeneinander an, bewertet werden Gestaltung, Individualität und Gesamteindruck. Besucher erleben die Fahrzeuge aus nächster Nähe und tauschen sich direkt mit den Besitzern aus.",
     img: hlShowshine,
-  },
-  {
-    icon: Music,
-    title: "Country Village",
-    short: "Western-Flair mit Live-Musik, Line-Dance und Marktständen.",
-    desc: "Der atmosphärische Mittelpunkt des Festivals – Western-Flair mit Gastronomie, Live-Musik, Line-Dance und Marktständen. Country-Feeling pur!",
-    img: hlCountry,
   },
   {
     icon: Dumbbell,
     title: "Stärkste Spedition",
     short: "Speditionen kämpfen um den Titel der Stärksten.",
-    desc: 'Bis zu 20 Speditionen kämpfen mit je sechs Teilnehmern um den Titel „Stärkste Spedition der Lausitz". Kraft, Geschicklichkeit und echter Teamgeist!',
+    desc: "Am Samstag und Sonntag treten bis zu 20 Speditionen mit bis zu sechs Teilnehmern gegeneinander an und kämpfen um den Titel „Stärkste Spedition der Lausitz". Gefordert sind Kraft, Geschicklichkeit und vor allem echter Teamgeist.",
     img: hlStrength,
+  },
+  {
+    icon: Music,
+    title: "Country Village",
+    short: "Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
+    desc: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
+    img: hlCountry,
+  },
+  {
+    icon: ShoppingBag,
+    title: "Aussteller & Händler",
+    short: "Trucks, Technik, Outdoor, Lifestyle und Handwerk.",
+    desc: "Im Händler- und Ausstellerbereich präsentieren Unternehmen Produkte und Dienstleistungen aus den Bereichen Trucks, Technik, Outdoor, Lifestyle und Handwerk. Ergänzt wird das Angebot durch Cowboy- und Westernzubehör sowie Merchandise.",
+    img: hlExhibitors,
   },
   {
     icon: Axe,
@@ -55,29 +70,50 @@ const highlights = [
     img: hlFalconry,
   },
   {
-    icon: ShoppingBag,
-    title: "Aussteller & Händler",
-    short: "Trucks, Technik, Outdoor, Lifestyle und Handwerk.",
-    desc: "Produkte und Dienstleistungen aus Trucks, Technik, Outdoor, Lifestyle und Handwerk. Dazu Cowboy- und Westernzubehör sowie Merchandise.",
-    img: hlExhibitors,
+    icon: Gamepad2,
+    title: "RC Truck Trial",
+    short: "Offroad-Wettbewerb im Modellformat mit Fingerspitzengefühl.",
+    desc: "Der RC Truck Trial überträgt die Faszination des Offroad-Wettbewerbs ins Modellformat und fordert Präzision, Technikverständnis und Fingerspitzengefühl. Auf einem anspruchsvollen Parcours treten detailgetreue RC-Trucks gegeneinander an und sorgen für Spannung im Kleinformat.",
+    img: hlRctruck,
   },
   {
-    icon: Tent,
-    title: "Camping",
-    short: "Truck- & Country-Camp direkt am Gelände.",
-    desc: "Truck- & Country-Camp direkt am Gelände. Campingmöglichkeiten ab Freitag – abends Lagerfeuer, morgens Motorengeräusche.",
-    img: hlCamping,
+    icon: Truck,
+    title: "Monstertruckshow",
+    short: "Pure Action mit kraftvollen Manövern und spektakulären Sprüngen.",
+    desc: "Die Monstertruckshow bringt pure Action auf das Festivalgelände, wenn die gewaltigen Fahrzeuge mit kraftvollen Manövern und spektakulären Sprüngen begeistern. Dabei demonstrieren die Trucks eindrucksvoll Leistung, Kontrolle und Show-Charakter zugleich.",
+    img: hlMonstertruck,
+  },
+  {
+    icon: Mic,
+    title: "Konzerte",
+    short: "Live-Acts aus dem Country-Bereich an allen drei Festivaltagen.",
+    desc: "Die Konzerte finden am Freitag, Samstag und Sonntag statt und setzen an jedem Veranstaltungstag musikalische Akzente. Mit Live-Acts aus dem Country-Bereich sorgen sie für durchgängige Abendunterhaltung und eine stimmungsvolle Festivalatmosphäre.",
+    img: hlKonzerte,
+  },
+  {
+    icon: Gauge,
+    title: "¼ Meile",
+    short: "Trucks im direkten Beschleunigungsvergleich auf der Strecke.",
+    desc: "Auf der ¼ Meile treten Trucks im direkten Beschleunigungsvergleich gegeneinander an und demonstrieren eindrucksvoll ihre Leistungsfähigkeit. Das Format sorgt für spürbare Spannung, hohe Zuschauerbindung und einen klaren Fokus auf Performance und Technik.",
+    img: hlViertelmeile,
+  },
+  {
+    icon: Sparkles,
+    title: "Festival-Erlebniswelt",
+    short: "Kinderprogramm, Line-Dance, Bullriding, Bogenschießen & mehr.",
+    desc: "Freut euch auf ein umfangreiches Kinderprogramm, das kleine Entdecker den ganzen Tag begeistert. Dazu gibt's mitreißende Line‑Dance‑Sessions, actionreiches Bullriding und Bogenschießen für alle, die ihre Treffsicherheit testen wollen. Ein echtes Highlight: atemberaubende Hubschrauberrundflüge, die euch das Festivalgelände aus der Vogelperspektive erleben lassen.",
+    img: hlErlebniswelt,
   },
 ];
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 const getItemVariant = (index: number) => ({
-  hidden: { opacity: 0, x: index % 2 === 0 ? -40 : 40, y: 20 },
-  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+  hidden: { opacity: 0, x: index % 2 === 0 ? -30 : 30, y: 15 },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 });
 
 const HighlightsSection = () => {
@@ -119,7 +155,7 @@ const HighlightsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5"
         >
           {highlights.map((h, i) => (
             <motion.div
@@ -133,6 +169,7 @@ const HighlightsSection = () => {
                 <img
                   src={h.img}
                   alt={h.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -148,7 +185,7 @@ const HighlightsSection = () => {
         </motion.div>
       </div>
 
-      {/* Detail overlay */}
+      {/* Detail overlay – text below image */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
@@ -158,7 +195,6 @@ const HighlightsSection = () => {
             className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center p-4 cursor-pointer"
             onClick={() => setSelected(null)}
           >
-            {/* Prev arrow */}
             <button
               onClick={goPrev}
               className="absolute left-4 sm:left-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
@@ -166,7 +202,6 @@ const HighlightsSection = () => {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* Next arrow */}
             <button
               onClick={goNext}
               className="absolute right-4 sm:right-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
@@ -180,7 +215,7 @@ const HighlightsSection = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-3xl w-full card-rugged rounded-lg overflow-hidden cursor-default"
+              className="relative max-w-3xl w-full card-rugged rounded-lg overflow-hidden cursor-default max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -192,14 +227,14 @@ const HighlightsSection = () => {
               <img
                 src={highlights[selected].img}
                 alt={highlights[selected].title}
-                className="w-full h-64 sm:h-80 object-cover"
+                className="w-full h-56 sm:h-72 lg:h-80 object-cover"
               />
               <div className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  {(() => { const Icon = highlights[selected].icon; return <Icon className="w-7 h-7 text-primary" />; })()}
-                  <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-wide">{highlights[selected].title}</h3>
+                  {(() => { const Icon = highlights[selected].icon; return <Icon className="w-7 h-7 text-primary shrink-0" />; })()}
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide">{highlights[selected].title}</h3>
                 </div>
-                <p className="text-muted-foreground font-body text-lg leading-relaxed">
+                <p className="text-muted-foreground font-body text-base sm:text-lg leading-relaxed">
                   {highlights[selected].desc}
                 </p>
               </div>
