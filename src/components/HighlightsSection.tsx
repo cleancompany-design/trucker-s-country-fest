@@ -176,9 +176,9 @@ const HighlightsSection = () => {
               <div className="p-2 sm:p-3">
                 <div className="flex items-center gap-1.5 mb-0.5 sm:mb-1">
                   <h.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
-                  <h3 className="font-display text-xs sm:text-sm font-semibold truncate">{h.title}</h3>
+                  <h3 className="font-display text-sm sm:text-base font-semibold truncate">{h.title}</h3>
                 </div>
-                <p className="text-[10px] sm:text-xs text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
               </div>
             </motion.div>
           ))}

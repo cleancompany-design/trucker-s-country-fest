@@ -1,29 +1,33 @@
 import { motion } from "framer-motion";
 import { Music, Calendar } from "lucide-react";
 import lineupBg from "@/assets/lineup-bg.jpg";
+import artistCashbags from "@/assets/artist-cashbags.png";
+import artistAlina from "@/assets/artist-alina.png";
+import artistLinda from "@/assets/artist-linda.png";
+import artistJonny from "@/assets/artist-jonny.png";
 
 const days = [
   {
     day: "Freitag",
     date: "07.08.2026",
     acts: [
-      { time: "20:00 – 22:00 Uhr", name: "The Cashbags" },
+      { time: "20:00 – 22:00 Uhr", name: "The Cashbags", img: artistCashbags },
     ],
   },
   {
     day: "Samstag",
     date: "08.08.2026",
     acts: [
-      { time: "19:00 – 20:30 Uhr", name: "Alina Sebastian" },
-      { time: "20:30 – 22:30 Uhr", name: "Truck Stop" },
+      { time: "19:00 – 20:30 Uhr", name: "Alina Sebastian", img: artistAlina },
+      { time: "20:30 – 22:30 Uhr", name: "Truck Stop", img: null },
     ],
   },
   {
     day: "Sonntag",
     date: "09.08.2026",
     acts: [
-      { time: "13:30 – 14:30 Uhr", name: "Linda Feller" },
-      { time: "14:30 – 15:30 Uhr", name: "Jonny Hill" },
+      { time: "13:30 – 14:30 Uhr", name: "Linda Feller", img: artistLinda },
+      { time: "14:30 – 15:30 Uhr", name: "Jonny Hill", img: artistJonny },
     ],
   },
 ];
@@ -80,14 +84,24 @@ const LineupSection = () => {
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors"
+                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center gap-3 sm:gap-4"
                   >
-                    <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                      {act.time}
-                    </span>
-                    <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                      {act.name}
-                    </span>
+                    {act.img && (
+                      <img
+                        src={act.img}
+                        alt={act.name}
+                        loading="lazy"
+                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                      />
+                    )}
+                    <div>
+                      <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+                        {act.time}
+                      </span>
+                      <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+                        {act.name}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
