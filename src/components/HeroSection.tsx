@@ -26,8 +26,8 @@ const HeroSection = () => {
         <img src={ovwaLogo} alt="OVWA" className="h-10 sm:h-14 opacity-90" />
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
-        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-16 sm:h-20 lg:h-24 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
+      <div className="absolute top-6 right-4 sm:right-6 z-20">
+        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-10 sm:h-14 lg:h-20 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
       </div>
 
       {/* Content */}
