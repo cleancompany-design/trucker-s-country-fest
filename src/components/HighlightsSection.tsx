@@ -86,7 +86,7 @@ const highlights = [
   {
     icon: Mic,
     title: "Konzerte",
-    short: "Live-Acts aus dem Country-Bereich an allen drei Festivaltagen.",
+    short: "Live-Acts aus dem Country-Bereich.",
     desc: "Die Konzerte finden am Freitag, Samstag und Sonntag statt und setzen an jedem Veranstaltungstag musikalische Akzente. Mit Live-Acts aus dem Country-Bereich sorgen sie für durchgängige Abendunterhaltung und eine stimmungsvolle Festivalatmosphäre.",
     img: hlKonzerte,
   },
