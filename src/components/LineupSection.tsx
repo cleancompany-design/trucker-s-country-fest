@@ -1,29 +1,33 @@
 import { motion } from "framer-motion";
 import { Music, Calendar } from "lucide-react";
 import lineupBg from "@/assets/lineup-bg.jpg";
+import artistCashbags from "@/assets/artist-cashbags.png";
+import artistAlina from "@/assets/artist-alina.png";
+import artistLinda from "@/assets/artist-linda.png";
+import artistJonny from "@/assets/artist-jonny.png";
 
 const days = [
   {
     day: "Freitag",
     date: "07.08.2026",
     acts: [
-      { time: "20:00 – 22:00 Uhr", name: "The Cashbags" },
+      { time: "20:00 – 22:00 Uhr", name: "The Cashbags", img: artistCashbags },
     ],
   },
   {
     day: "Samstag",
     date: "08.08.2026",
     acts: [
-      { time: "19:00 – 20:30 Uhr", name: "Alina Sebastian" },
-      { time: "20:30 – 22:30 Uhr", name: "Truck Stop" },
+      { time: "19:00 – 20:30 Uhr", name: "Alina Sebastian", img: artistAlina },
+      { time: "20:30 – 22:30 Uhr", name: "Truck Stop", img: null },
     ],
   },
   {
     day: "Sonntag",
     date: "09.08.2026",
     acts: [
-      { time: "13:30 – 14:30 Uhr", name: "Linda Feller" },
-      { time: "14:30 – 15:30 Uhr", name: "Jonny Hill" },
+      { time: "13:30 – 14:30 Uhr", name: "Linda Feller", img: artistLinda },
+      { time: "14:30 – 15:30 Uhr", name: "Jonny Hill", img: artistJonny },
     ],
   },
 ];
@@ -42,7 +46,7 @@ const LineupSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 pt-10 sm:pt-16"
+          className="text-center mb-10 sm:mb-12"
         >
           <h2 className="flex items-center justify-center gap-2 sm:gap-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-glow">
             <Music className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
@@ -64,7 +68,7 @@ const LineupSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: di * 0.15 }}
-              className="card-rugged rounded-lg overflow-hidden"
+              className="card-rugged rounded-lg overflow-hidden flex flex-col"
             >
               <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
@@ -76,18 +80,28 @@ const LineupSection = () => {
                 </span>
               </div>
 
-              <div className="divide-y divide-border">
+              <div className={`divide-y divide-border flex-1 flex flex-col ${day.acts.length === 1 ? 'justify-center' : ''}`}>
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors"
+                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4"
                   >
-                    <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                      {act.time}
-                    </span>
-                    <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                      {act.name}
-                    </span>
+                    {act.img && (
+                      <img
+                        src={act.img}
+                        alt={act.name}
+                        loading="lazy"
+                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                      />
+                    )}
+                    <div>
+                      <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+                        {act.time}
+                      </span>
+                      <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+                        {act.name}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
