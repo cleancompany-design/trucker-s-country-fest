@@ -211,10 +211,10 @@ const HighlightsSection = () => {
 
             <motion.div
               key={selected}
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="relative max-w-3xl w-full card-rugged rounded-lg overflow-hidden cursor-default max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
