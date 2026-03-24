@@ -43,45 +43,13 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, scale: 3, rotate: -8 }}
-          animate={{ opacity: 1, scale: [3, 0.95, 1], rotate: [-8, 1, 0] }}
-          transition={{
-            delay: 0.5,
-            duration: 2,
-            ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-            scale: { duration: 2, times: [0, 0.85, 1] },
-            rotate: { duration: 2, times: [0, 0.85, 1] },
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
           className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold leading-[0.9] mb-6 whitespace-nowrap"
+          style={{ textShadow: "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)" }}
         >
-          <motion.span
-            className="text-primary text-glow inline-block"
-            initial={{
-              textShadow: "none",
-            }}
-            animate={{
-              textShadow: [
-                // Start: no glow (during flight)
-                "0 0 0px rgba(255,50,10,0)",
-                // Instant red glow on landing
-                "0 0 80px rgba(255,50,10,1), 0 0 40px rgba(255,80,20,0.9), 0 0 15px rgba(255,40,10,0.7)",
-                // Cool to black shadow
-                "0 0 30px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.7)",
-                // Fade to subtle
-                "0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2)",
-              ],
-            }}
-            transition={{
-              textShadow: {
-                delay: 0.5,
-                duration: 5,
-                times: [0, 0.4, 0.6, 1],
-                ease: "easeOut",
-              },
-            }}
-          >
-            TRUCK & COUNTRY FESTIVAL
-          </motion.span>
+          <span className="text-primary text-glow">TRUCK & COUNTRY FESTIVAL</span>
         </motion.h1>
 
         <motion.div
