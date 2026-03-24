@@ -93,7 +93,7 @@ const highlights = [
   {
     icon: Gauge,
     title: "¼ Meile",
-    short: "Trucks im direkten Beschleunigungsvergleich auf der Strecke.",
+    short: "Der rohe Beschleunigungs-Vergleich.",
     desc: "Auf der ¼ Meile treten Trucks im direkten Beschleunigungsvergleich gegeneinander an und demonstrieren eindrucksvoll ihre Leistungsfähigkeit. Das Format sorgt für spürbare Spannung, hohe Zuschauerbindung und einen klaren Fokus auf Performance und Technik.",
     img: hlViertelmeile,
   },
