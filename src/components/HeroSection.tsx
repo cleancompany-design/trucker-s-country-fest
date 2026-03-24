@@ -8,20 +8,6 @@ import { Calendar, MapPin } from "lucide-react";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
-const stampVariants = {
-  hidden: { opacity: 0, scale: 2.5, rotate: -8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-      delay: 0.3,
-    },
-  },
-};
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -34,28 +20,22 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
-      {/* Logos top-left */}
+
+      {/* Logos top corners */}
       <div className="absolute top-6 left-6 z-20 flex items-center gap-3">
         <img src={ovwaLogo} alt="OVWA" className="h-10 sm:h-14 opacity-90" />
         <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
       </div>
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
+        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-16 sm:h-20 lg:h-24 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
-        {/* TCF Logo with stamp animation */}
-        <motion.img
-          src={tcfLogo}
-          alt="Truck & Country Festival 2026 Lausitzring"
-          variants={stampVariants}
-          initial="hidden"
-          animate="visible"
-          className="w-48 sm:w-64 lg:w-80 mb-6 drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
-        />
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.2 }}
           className="text-foreground font-display text-xl sm:text-2xl lg:text-3xl tracking-[0.3em] mb-4 font-semibold"
           style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}
         >
@@ -64,10 +44,23 @@ const HeroSection = () => {
 
         <motion.h1
           initial={{ opacity: 0, scale: 2.5, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.8, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            textShadow: [
+              "0 0 80px rgba(255,60,20,0.9), 0 0 40px rgba(255,60,20,0.7), 0 4px 20px rgba(0,0,0,1)",
+              "0 0 40px rgba(255,60,20,0.5), 0 0 20px rgba(200,30,0,0.4), 0 4px 20px rgba(0,0,0,1)",
+              "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)",
+            ],
+          }}
+          transition={{
+            opacity: { delay: 0.5, duration: 0.3 },
+            scale: { delay: 0.5, duration: 0.35, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+            rotate: { delay: 0.5, duration: 0.35 },
+            textShadow: { delay: 0.5, duration: 1.8, times: [0, 0.4, 1] },
+          }}
           className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold leading-[0.9] mb-6 whitespace-nowrap"
-          style={{ textShadow: "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)" }}
         >
           <span className="text-primary text-glow">TRUCK & COUNTRY FESTIVAL</span>
         </motion.h1>
@@ -75,8 +68,8 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.1 }}
-          className="flex items-center justify-center gap-6 mb-8"
+          transition={{ delay: 1.2 }}
+          className="flex items-center justify-center gap-6 mb-10"
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)" }}
         >
           <span className="flex items-center gap-2 font-body text-foreground/90">
@@ -92,8 +85,8 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3 }}
-          className="flex justify-center mb-8"
+          transition={{ delay: 1.4 }}
+          className="flex justify-center mb-10"
         >
           <Countdown />
         </motion.div>
@@ -101,7 +94,7 @@ const HeroSection = () => {
         <motion.a
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 1.6 }}
           href={TICKET_URL}
           target="_blank"
           rel="noopener noreferrer"
