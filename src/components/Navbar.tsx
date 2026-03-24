@@ -8,7 +8,7 @@ const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-coun
 
 const navLinks = [
   { label: "Highlights", href: "#highlights" },
-  { label: "Programm", href: "#programm" },
+  
   { label: "Line-Up", href: "#lineup" },
   { label: "Anfahrt", href: "#anfahrt" },
   { label: "Infos & Tickets", href: "#infos" },
