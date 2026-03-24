@@ -80,7 +80,7 @@ const LineupSection = () => {
                 </span>
               </div>
 
-              <div className="divide-y divide-border">
+              <div className="divide-y divide-border flex-1 flex flex-col justify-center">
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
