@@ -130,7 +130,7 @@ const HighlightsSection = () => {
   };
 
   return (
-    <section id="highlights" className="pt-2 sm:pt-4 pb-20 sm:pb-28 px-4 scroll-mt-16">
+    <section id="highlights" className="pt-2 sm:pt-4 pb-16 sm:pb-20 px-4 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
