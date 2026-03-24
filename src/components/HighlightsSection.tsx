@@ -100,7 +100,7 @@ const highlights = [
   {
     icon: Sparkles,
     title: "Festival-Erlebniswelt",
-    short: "Kinderprogramm, Line-Dance, Bullriding, Bogenschießen & mehr.",
+    short: "Kinderprogramm, Line-Dance und mehr.",
     desc: "Freut euch auf ein umfangreiches Kinderprogramm, das kleine Entdecker den ganzen Tag begeistert. Dazu gibt's mitreißende Line‑Dance‑Sessions, actionreiches Bullriding und Bogenschießen für alle, die ihre Treffsicherheit testen wollen. Ein echtes Highlight: atemberaubende Hubschrauberrundflüge, die euch das Festivalgelände aus der Vogelperspektive erleben lassen.",
     img: hlErlebniswelt,
   },
