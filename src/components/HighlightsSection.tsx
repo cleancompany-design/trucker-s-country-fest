@@ -23,84 +23,84 @@ const highlights = [
   {
     icon: Trophy,
     title: "Truck Trial EM",
-    short: "Internationale Offroad-Meisterschaft mit tonnenschweren Trucks.",
+    short: "Internationale Offroad-Meisterschaft.",
     desc: "Im sportlichen Mittelpunkt des Truck und Country Festivals steht die Truck-Trial-Europameisterschaft, bei der internationale Teams tonnenschwere Trucks und leistungsstarke Zugmaschinen präzise durch Offroad-Sektionen mit steilen Hängen, tiefen Gräben und anspruchsvollen Hindernissen manövrieren.",
     img: hlTrucktrial,
   },
   {
     icon: Flame,
     title: "Show & Shine",
-    short: "Individuell gestaltete Showtrucks in verschiedenen Kategorien.",
+    short: "Individuell gestaltete Showtrucks.",
     desc: "Beim Show & Shine Truck Contest treten individuell gestaltete Showtrucks in verschiedenen Kategorien gegeneinander an, bewertet werden Gestaltung, Individualität und Gesamteindruck. Besucher erleben die Fahrzeuge aus nächster Nähe und tauschen sich direkt mit den Besitzern aus.",
     img: hlShowshine,
   },
   {
     icon: Dumbbell,
     title: "Stärkste Spedition",
-    short: "Speditionen kämpfen um den Titel der Stärksten.",
+    short: "Speditionen kämpfen um den Titel.",
     desc: 'Am Samstag und Sonntag treten bis zu 20 Speditionen mit bis zu sechs Teilnehmern gegeneinander an und kämpfen um den Titel „Stärkste Spedition der Lausitz". Gefordert sind Kraft, Geschicklichkeit und vor allem echter Teamgeist.',
     img: hlStrength,
   },
   {
     icon: Music,
     title: "Country Village",
-    short: "Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
+    short: "Western-Flair mit Gastronomie und Musik.",
     desc: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
     img: hlCountry,
   },
   {
     icon: ShoppingBag,
     title: "Aussteller & Händler",
-    short: "Trucks, Technik, Outdoor, Lifestyle und Handwerk.",
+    short: "Trucks, Technik und Handwerk.",
     desc: "Im Händler- und Ausstellerbereich präsentieren Unternehmen Produkte und Dienstleistungen aus den Bereichen Trucks, Technik, Outdoor, Lifestyle und Handwerk. Ergänzt wird das Angebot durch Cowboy- und Westernzubehör sowie Merchandise.",
     img: hlExhibitors,
   },
   {
     icon: Axe,
     title: "Kettensägenkunst",
-    short: "Live-Speedcarving – Kunstwerke aus rohem Holz.",
+    short: "Speedcarving – Kunstwerke aus Holz.",
     desc: "Live-Speedcarving – wenn aus rohem Holz in Minuten beeindruckende Kunstwerke entstehen. Handwerk hautnah erleben.",
     img: hlChainsaw,
   },
   {
     icon: Bird,
     title: "Falknerei",
-    short: "Greifvogel-Flugshows über dem Festivalgelände.",
+    short: "Greifvogel-Flugshows.",
     desc: "Eindrucksvolle Greifvogel-Flugshows über dem Festivalgelände. Adler, Falken und Bussarde im freien Flug – eine naturverbundene Erlebnisdimension.",
     img: hlFalconry,
   },
   {
     icon: Gamepad2,
     title: "RC Truck Trial",
-    short: "Offroad-Wettbewerb im Modellformat mit Fingerspitzengefühl.",
+    short: "Offroad-Wettbewerb im Modellformat.",
     desc: "Der RC Truck Trial überträgt die Faszination des Offroad-Wettbewerbs ins Modellformat und fordert Präzision, Technikverständnis und Fingerspitzengefühl. Auf einem anspruchsvollen Parcours treten detailgetreue RC-Trucks gegeneinander an und sorgen für Spannung im Kleinformat.",
     img: hlRctruck,
   },
   {
     icon: Truck,
     title: "Monstertruckshow",
-    short: "Pure Action mit kraftvollen Manövern und spektakulären Sprüngen.",
+    short: "Pure Action mit spektakulären Manövern.",
     desc: "Die Monstertruckshow bringt pure Action auf das Festivalgelände, wenn die gewaltigen Fahrzeuge mit kraftvollen Manövern und spektakulären Sprüngen begeistern. Dabei demonstrieren die Trucks eindrucksvoll Leistung, Kontrolle und Show-Charakter zugleich.",
     img: hlMonstertruck,
   },
   {
     icon: Mic,
     title: "Konzerte",
-    short: "Live-Acts aus dem Country-Bereich an allen drei Festivaltagen.",
+    short: "Live-Acts aus dem Country-Bereich.",
     desc: "Die Konzerte finden am Freitag, Samstag und Sonntag statt und setzen an jedem Veranstaltungstag musikalische Akzente. Mit Live-Acts aus dem Country-Bereich sorgen sie für durchgängige Abendunterhaltung und eine stimmungsvolle Festivalatmosphäre.",
     img: hlKonzerte,
   },
   {
     icon: Gauge,
     title: "¼ Meile",
-    short: "Trucks im direkten Beschleunigungsvergleich auf der Strecke.",
+    short: "Der rohe Beschleunigungs-Vergleich.",
     desc: "Auf der ¼ Meile treten Trucks im direkten Beschleunigungsvergleich gegeneinander an und demonstrieren eindrucksvoll ihre Leistungsfähigkeit. Das Format sorgt für spürbare Spannung, hohe Zuschauerbindung und einen klaren Fokus auf Performance und Technik.",
     img: hlViertelmeile,
   },
   {
     icon: Sparkles,
     title: "Festival-Erlebniswelt",
-    short: "Kinderprogramm, Line-Dance, Bullriding, Bogenschießen & mehr.",
+    short: "Kinderprogramm, Line-Dance und mehr.",
     desc: "Freut euch auf ein umfangreiches Kinderprogramm, das kleine Entdecker den ganzen Tag begeistert. Dazu gibt's mitreißende Line‑Dance‑Sessions, actionreiches Bullriding und Bogenschießen für alle, die ihre Treffsicherheit testen wollen. Ein echtes Highlight: atemberaubende Hubschrauberrundflüge, die euch das Festivalgelände aus der Vogelperspektive erleben lassen.",
     img: hlErlebniswelt,
   },
@@ -211,10 +211,10 @@ const HighlightsSection = () => {
 
             <motion.div
               key={selected}
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="relative max-w-3xl w-full card-rugged rounded-lg overflow-hidden cursor-default max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
