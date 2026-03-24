@@ -79,7 +79,7 @@ const highlights = [
   {
     icon: Truck,
     title: "Monstertruckshow",
-    short: "Pure Action mit kraftvollen Manövern und spektakulären Sprüngen.",
+    short: "Pure Action mit spektakulären Manövern.",
     desc: "Die Monstertruckshow bringt pure Action auf das Festivalgelände, wenn die gewaltigen Fahrzeuge mit kraftvollen Manövern und spektakulären Sprüngen begeistern. Dabei demonstrieren die Trucks eindrucksvoll Leistung, Kontrolle und Show-Charakter zugleich.",
     img: hlMonstertruck,
   },
