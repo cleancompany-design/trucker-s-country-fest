@@ -65,7 +65,7 @@ const highlights = [
   {
     icon: Bird,
     title: "Falknerei",
-    short: "Greifvogel-Flugshows über dem Festivalgelände.",
+    short: "Greifvogel-Flugshows.",
     desc: "Eindrucksvolle Greifvogel-Flugshows über dem Festivalgelände. Adler, Falken und Bussarde im freien Flug – eine naturverbundene Erlebnisdimension.",
     img: hlFalconry,
   },
