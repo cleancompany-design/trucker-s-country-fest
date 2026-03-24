@@ -43,26 +43,37 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, scale: 2.5, rotate: -5 }}
+          initial={{ opacity: 0, scale: 3, rotate: -8, filter: "brightness(2.5)" }}
           animate={{
             opacity: 1,
-            scale: 1,
-            rotate: 0,
-            textShadow: [
-              "0 0 80px rgba(255,60,20,0.9), 0 0 40px rgba(255,60,20,0.7), 0 4px 20px rgba(0,0,0,1)",
-              "0 0 40px rgba(255,60,20,0.5), 0 0 20px rgba(200,30,0,0.4), 0 4px 20px rgba(0,0,0,1)",
-              "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)",
-            ],
+            scale: [3, 0.95, 1],
+            rotate: [-8, 1, 0],
+            filter: ["brightness(2.5)", "brightness(1.5)", "brightness(1)"],
           }}
           transition={{
-            opacity: { delay: 0.5, duration: 0.3 },
-            scale: { delay: 0.5, duration: 0.35, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-            rotate: { delay: 0.5, duration: 0.35 },
-            textShadow: { delay: 0.5, duration: 1.8, times: [0, 0.4, 1] },
+            delay: 0.5,
+            duration: 2,
+            ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+            scale: { duration: 2, times: [0, 0.85, 1] },
+            rotate: { duration: 2, times: [0, 0.85, 1] },
+            filter: { duration: 2.5, times: [0, 0.5, 1] },
           }}
           className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold leading-[0.9] mb-6 whitespace-nowrap"
+          style={{ textShadow: "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)" }}
         >
-          <span className="text-primary text-glow">TRUCK & COUNTRY FESTIVAL</span>
+          <motion.span
+            className="text-primary text-glow inline-block"
+            animate={{
+              textShadow: [
+                "0 0 80px rgba(255,80,20,1), 0 0 40px rgba(255,60,20,0.8), 0 4px 20px rgba(0,0,0,1)",
+                "0 0 30px rgba(255,60,20,0.4), 0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.6)",
+                "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)",
+              ],
+            }}
+            transition={{ delay: 0.5, duration: 3, times: [0, 0.4, 1] }}
+          >
+            TRUCK & COUNTRY FESTIVAL
+          </motion.span>
         </motion.h1>
 
         <motion.div
