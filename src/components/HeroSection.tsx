@@ -41,8 +41,8 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6"
-          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.5)" }}
+          className="font-display text-4xl sm:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6 whitespace-nowrap"
+          style={{ textShadow: "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5)" }}
         >
           <span className="text-primary text-glow">TRUCK & COUNTRY FESTIVAL</span>
         </motion.h1>

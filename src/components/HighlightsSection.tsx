@@ -203,9 +203,6 @@ const HighlightsSection = () => {
                   {highlights[selected].desc}
                 </p>
               </div>
-              <p className="text-center text-muted-foreground text-xs pb-4 font-body">
-                Klicken zum Schließen
-              </p>
             </motion.div>
           </motion.div>
         )}
