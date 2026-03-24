@@ -130,13 +130,13 @@ const HighlightsSection = () => {
   };
 
   return (
-    <section id="highlights" className="pt-2 sm:pt-4 pb-20 sm:pb-28 px-4 scroll-mt-16">
+    <section id="highlights" className="pt-2 sm:pt-4 pb-16 sm:pb-20 px-4 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="flex items-center justify-center gap-2 sm:gap-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
@@ -155,7 +155,7 @@ const HighlightsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3"
         >
           {highlights.map((h, i) => (
             <motion.div
@@ -165,7 +165,7 @@ const HighlightsSection = () => {
               onClick={() => setSelected(i)}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
-              <div className="relative h-28 sm:h-36 lg:h-44 overflow-hidden">
+              <div className="relative h-24 sm:h-28 lg:h-32 overflow-hidden">
                 <img
                   src={h.img}
                   alt={h.title}
@@ -173,12 +173,12 @@ const HighlightsSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
-              <div className="p-3 sm:p-5 sm:pt-4">
-                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
-                  <h.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{h.title}</h3>
+              <div className="p-2 sm:p-3">
+                <div className="flex items-center gap-1.5 mb-0.5 sm:mb-1">
+                  <h.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
+                  <h3 className="font-display text-xs sm:text-sm font-semibold truncate">{h.title}</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
+                <p className="text-[10px] sm:text-xs text-muted-foreground font-body leading-relaxed line-clamp-2">{h.short}</p>
               </div>
             </motion.div>
           ))}
