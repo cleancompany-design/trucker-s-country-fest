@@ -165,7 +165,7 @@ const HighlightsSection = () => {
               onClick={() => setSelected(i)}
               className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300 cursor-pointer"
             >
-              <div className="relative h-28 sm:h-36 lg:h-44 overflow-hidden">
+              <div className="relative h-24 sm:h-28 lg:h-32 overflow-hidden">
                 <img
                   src={h.img}
                   alt={h.title}
