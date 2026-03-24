@@ -51,7 +51,7 @@ const highlights = [
   {
     icon: ShoppingBag,
     title: "Aussteller & Händler",
-    short: "Trucks, Technik, Outdoor, Lifestyle und Handwerk.",
+    short: "Trucks, Technik und Handwerk.",
     desc: "Im Händler- und Ausstellerbereich präsentieren Unternehmen Produkte und Dienstleistungen aus den Bereichen Trucks, Technik, Outdoor, Lifestyle und Handwerk. Ergänzt wird das Angebot durch Cowboy- und Westernzubehör sowie Merchandise.",
     img: hlExhibitors,
   },
