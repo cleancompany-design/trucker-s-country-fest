@@ -37,7 +37,7 @@ const highlights = [
   {
     icon: Dumbbell,
     title: "Stärkste Spedition",
-    short: "Speditionen kämpfen um den Titel der Stärksten.",
+    short: "Speditionen kämpfen um den Titel.",
     desc: 'Am Samstag und Sonntag treten bis zu 20 Speditionen mit bis zu sechs Teilnehmern gegeneinander an und kämpfen um den Titel „Stärkste Spedition der Lausitz". Gefordert sind Kraft, Geschicklichkeit und vor allem echter Teamgeist.',
     img: hlStrength,
   },
