@@ -58,7 +58,7 @@ const highlights = [
   {
     icon: Axe,
     title: "Kettensägenkunst",
-    short: "Live-Speedcarving – Kunstwerke aus rohem Holz.",
+    short: "Speedcarving – Kunstwerke aus Holz.",
     desc: "Live-Speedcarving – wenn aus rohem Holz in Minuten beeindruckende Kunstwerke entstehen. Handwerk hautnah erleben.",
     img: hlChainsaw,
   },
