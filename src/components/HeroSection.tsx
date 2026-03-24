@@ -57,20 +57,27 @@ const HeroSection = () => {
           <motion.span
             className="text-primary text-glow inline-block"
             initial={{
-              textShadow: "0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.8)",
+              textShadow: "none",
             }}
             animate={{
               textShadow: [
-                // Step 1: red hot glow (starts after stamp lands)
+                // Start: no glow (during flight)
+                "0 0 0px rgba(255,50,10,0)",
+                // Instant red glow on landing
                 "0 0 80px rgba(255,50,10,1), 0 0 40px rgba(255,80,20,0.9), 0 0 15px rgba(255,40,10,0.7)",
-                // Step 2: fade red to dark/black shadow
+                // Cool to black shadow
                 "0 0 30px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,1), 0 0 60px rgba(0,0,0,0.7)",
-                // Step 3: fade to minimal subtle shadow
+                // Fade to subtle
                 "0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2)",
               ],
             }}
             transition={{
-              textShadow: { delay: 2.5, duration: 3, times: [0, 0.4, 1], ease: "easeOut" },
+              textShadow: {
+                delay: 0.5,
+                duration: 5,
+                times: [0, 0.4, 0.6, 1],
+                ease: "easeOut",
+              },
             }}
           >
             TRUCK & COUNTRY FESTIVAL
