@@ -44,7 +44,7 @@ const highlights = [
   {
     icon: Music,
     title: "Country Village",
-    short: "Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
+    short: "Western-Flair mit Gastronomie und Musik.",
     desc: "Das Country Village bildet den atmosphärischen Mittelpunkt des Festivals und verbindet Western-Flair mit Gastronomie, Musik und Aufenthaltsqualität.",
     img: hlCountry,
   },
