@@ -86,20 +86,22 @@ const LineupSection = () => {
                     key={act.name}
                     className="flex-1 flex items-center justify-center hover:bg-primary/5 transition-colors"
                   >
-                    <div className={`flex items-center justify-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5 w-full ${!act.img ? 'pr-14 sm:pr-20' : ''}`}>
-                      {act.img ? (
-                        <img
-                          src={act.img}
-                          alt={act.name}
-                          loading="lazy"
-                          className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
-                        />
-                      ) : (
-                        <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
-                          <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
-                        </div>
-                      )}
-                      <div>
+                    <div className="grid w-full max-w-[22rem] grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5">
+                      <div className="flex items-center justify-center">
+                        {act.img ? (
+                          <img
+                            src={act.img}
+                            alt={act.name}
+                            loading="lazy"
+                            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                          />
+                        ) : (
+                          <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
+                            <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="text-left">
                         <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
                           {act.time}
                         </span>
