@@ -22,7 +22,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center -mt-10">
-        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-[5rem] sm:h-[16rem] lg:h-[23rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] mb-2 sm:mb-4" />
+        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-[3.5rem] sm:h-[8rem] lg:h-[11.5rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] mb-2 sm:mb-4" />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
