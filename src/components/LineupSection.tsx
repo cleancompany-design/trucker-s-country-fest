@@ -60,7 +60,7 @@ const LineupSection = () => {
           <div className="section-divider w-48 mx-auto mt-6" />
         </motion.div>
 
-        <div className="flex flex-col xl:flex-row xl:items-start gap-6 xl:justify-center">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:items-start">
           {days.map((day, di) => (
             <motion.div
               key={day.day}
@@ -68,7 +68,7 @@ const LineupSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: di * 0.15 }}
-              className="card-rugged rounded-lg overflow-hidden xl:w-1/3"
+              className="card-rugged rounded-lg overflow-hidden"
             >
               <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
