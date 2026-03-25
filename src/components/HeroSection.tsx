@@ -23,11 +23,11 @@ const HeroSection = () => {
 
       {/* Logos top corners */}
       <div className="absolute top-6 left-6 z-20 flex items-center gap-3">
-        <img src={ovwaLogo} alt="OVWA" className="h-10 sm:h-14 opacity-90" />
-        <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-10 sm:h-14 opacity-80" />
+        <img src={ovwaLogo} alt="OVWA" className="h-12 sm:h-16 opacity-90" />
+        <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-12 sm:h-16 opacity-80" />
       </div>
-      <div className="absolute top-6 right-4 sm:right-6 z-20 flex items-center h-10 sm:h-14">
-        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-14 sm:h-20 lg:h-24 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
+      <div className="absolute top-6 right-4 sm:right-6 z-20 flex items-center h-12 sm:h-16">
+        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-16 sm:h-[23px] lg:h-[28px] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
       </div>
 
       {/* Content */}
