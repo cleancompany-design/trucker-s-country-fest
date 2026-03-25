@@ -60,53 +60,56 @@ const LineupSection = () => {
           <div className="section-divider w-48 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:items-start">
-          {days.map((day, di) => (
-            <motion.div
-              key={day.day}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: di * 0.15 }}
-              className="card-rugged rounded-lg overflow-hidden"
-            >
-              <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                <h3 className="font-display text-base sm:text-2xl font-semibold tracking-wider">
-                  {day.day}
-                </h3>
-                <span className="text-muted-foreground font-body text-xs sm:text-sm ml-auto">
-                  {day.date}
-                </span>
-              </div>
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          {days.map((day, di) => {
+            const isHalf = day.acts.length === 1;
+            return (
+              <motion.div
+                key={day.day}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: di * 0.15 }}
+                className={`card-rugged rounded-lg overflow-hidden ${isHalf ? 'xl:self-start' : ''}`}
+              >
+                <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-base sm:text-2xl font-semibold tracking-wider">
+                    {day.day}
+                  </h3>
+                  <span className="text-muted-foreground font-body text-xs sm:text-sm ml-auto">
+                    {day.date}
+                  </span>
+                </div>
 
-              <div className="divide-y divide-border">
-                {day.acts.map((act) => (
-                  <div
-                    key={act.name}
-                    className={`px-3 sm:px-6 ${day.acts.length === 1 ? 'py-3 sm:py-4' : 'py-3 sm:py-5'} hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4`}
-                  >
-                    {act.img && (
-                      <img
-                        src={act.img}
-                        alt={act.name}
-                        loading="lazy"
-                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
-                      />
-                    )}
-                    <div>
-                      <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                        {act.time}
-                      </span>
-                      <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                        {act.name}
-                      </span>
+                <div className="divide-y divide-border">
+                  {day.acts.map((act) => (
+                    <div
+                      key={act.name}
+                      className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4"
+                    >
+                      {act.img && (
+                        <img
+                          src={act.img}
+                          alt={act.name}
+                          loading="lazy"
+                          className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                        />
+                      )}
+                      <div>
+                        <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+                          {act.time}
+                        </span>
+                        <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+                          {act.name}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
