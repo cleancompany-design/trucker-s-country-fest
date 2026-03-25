@@ -15,7 +15,7 @@ const HeroSection = () => {
         <img
           src={heroImg}
           alt="Truck Trial Action beim Truck & Country Festival"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top brightness-[1.15]"
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
