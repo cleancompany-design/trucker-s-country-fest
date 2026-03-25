@@ -84,27 +84,29 @@ const LineupSection = () => {
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4 flex-1"
+                    className="flex-1 flex items-center justify-center hover:bg-primary/5 transition-colors"
                   >
-                    {act.img ? (
-                      <img
-                        src={act.img}
-                        alt={act.name}
-                        loading="lazy"
-                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
-                      />
-                    ) : (
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
-                        <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
+                    <div className="flex items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5">
+                      {act.img ? (
+                        <img
+                          src={act.img}
+                          alt={act.name}
+                          loading="lazy"
+                          className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
+                          <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
+                        </div>
+                      )}
+                      <div>
+                        <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+                          {act.time}
+                        </span>
+                        <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+                          {act.name}
+                        </span>
                       </div>
-                    )}
-                    <div>
-                      <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                        {act.time}
-                      </span>
-                      <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                        {act.name}
-                      </span>
                     </div>
                   </div>
                 ))}
