@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14 sm:h-16">
             <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="shrink-0 flex items-center gap-2">
               <img src={ovwaLogo} alt="OVWA" className="h-7 sm:h-9" />
-              <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-8 sm:h-10" />
+              <img src={dekraLogo} alt="DEKRA Lausitzring" className="h-7 sm:h-9" />
             </button>
 
             <div className="hidden md:flex items-center gap-1">
