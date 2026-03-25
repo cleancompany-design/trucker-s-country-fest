@@ -68,7 +68,7 @@ const LineupSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: di * 0.15 }}
-              className="card-rugged rounded-lg overflow-hidden"
+              className="card-rugged rounded-lg overflow-hidden flex flex-col"
             >
               <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
@@ -80,11 +80,11 @@ const LineupSection = () => {
                 </span>
               </div>
 
-              <div className="divide-y divide-border">
+              <div className="divide-y divide-border flex-1 flex flex-col">
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4"
+                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4 flex-1"
                   >
                     {act.img ? (
                       <img
