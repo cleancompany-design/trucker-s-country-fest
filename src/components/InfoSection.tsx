@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Ticket, Info } from "lucide-react";
-import TicketCounter from "./TicketCounter";
+
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
 import infoZeiten from "@/assets/info-zeiten.jpg";
@@ -50,7 +50,7 @@ const tickets = [
 
 const InfoSection = () => {
   return (
-    <section id="infos" className="pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 scroll-mt-16">
+    <section id="infos" className="pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 scroll-mt-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -144,9 +144,6 @@ const InfoSection = () => {
           >
             JETZT TICKETS SICHERN
           </a>
-          <div className="mt-4 flex justify-center">
-            <TicketCounter />
-          </div>
         </motion.div>
       </div>
     </section>

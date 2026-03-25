@@ -60,7 +60,7 @@ const LineupSection = () => {
           <div className="section-divider w-48 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:items-stretch">
           {days.map((day, di) => (
             <motion.div
               key={day.day}
@@ -80,27 +80,35 @@ const LineupSection = () => {
                 </span>
               </div>
 
-              <div className={`divide-y divide-border flex-1 flex flex-col ${day.acts.length === 1 ? 'justify-center' : ''}`}>
+              <div className="divide-y divide-border flex-1 flex flex-col">
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4"
+                    className="flex-1 flex items-center justify-center hover:bg-primary/5 transition-colors"
                   >
-                    {act.img && (
-                      <img
-                        src={act.img}
-                        alt={act.name}
-                        loading="lazy"
-                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
-                      />
-                    )}
-                    <div>
-                      <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                        {act.time}
-                      </span>
-                      <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                        {act.name}
-                      </span>
+                    <div className="grid w-full max-w-[22rem] grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5">
+                      <div className="flex items-center justify-center">
+                        {act.img ? (
+                          <img
+                            src={act.img}
+                            alt={act.name}
+                            loading="lazy"
+                            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+                          />
+                        ) : (
+                          <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
+                            <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="text-left">
+                        <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+                          {act.time}
+                        </span>
+                        <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+                          {act.name}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 ))}
