@@ -86,7 +86,7 @@ const LineupSection = () => {
                     key={act.name}
                     className="flex-1 flex items-center justify-center hover:bg-primary/5 transition-colors"
                   >
-                    <div className="flex items-center justify-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5 w-full">
+                    <div className={`flex items-center justify-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5 w-full ${!act.img ? 'pl-8 sm:pl-12' : ''}`}>
                       {act.img ? (
                         <img
                           src={act.img}
