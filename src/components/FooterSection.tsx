@@ -10,7 +10,7 @@ const FooterSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Top row */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-sm font-body text-muted-foreground flex-wrap">
-          <span className="font-display text-base tracking-wider">TRUCK & COUNTRY FESTIVAL 2026</span>
+          <span className="font-display text-base tracking-wider sm:px-4">TRUCK & COUNTRY FESTIVAL 2026</span>
           <Divider />
           <Link to="/impressum" className="hover:text-primary transition-colors sm:px-4">
             Impressum
