@@ -9,7 +9,7 @@ const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-coun
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -21,7 +21,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center pt-6 sm:pt-10 lg:pt-12">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center pt-4 sm:pt-6 lg:pt-8">
         <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-[5rem] sm:h-[16rem] lg:h-[23rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] mb-4 sm:mb-6" />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
