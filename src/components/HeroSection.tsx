@@ -20,9 +20,11 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
 
+      {/* Logo top-right */}
+      <img src={tcfLogo} alt="Truck & Country Festival 2026" className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 h-[4rem] sm:h-[7rem] lg:h-[9rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
+
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center -mt-10">
-        <img src={tcfLogo} alt="Truck & Country Festival 2026" className="h-[3.5rem] sm:h-[8rem] lg:h-[11.5rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] mb-2 sm:mb-4" />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
