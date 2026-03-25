@@ -84,7 +84,7 @@ const LineupSection = () => {
                 {day.acts.map((act) => (
                   <div
                     key={act.name}
-                    className="px-3 sm:px-6 py-3 sm:py-5 hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4"
+                    className={`px-3 sm:px-6 ${day.acts.length === 1 ? 'py-3 sm:py-4' : 'py-3 sm:py-5'} hover:bg-primary/5 transition-colors flex items-center justify-center gap-3 sm:gap-4`}
                   >
                     {act.img && (
                       <img
