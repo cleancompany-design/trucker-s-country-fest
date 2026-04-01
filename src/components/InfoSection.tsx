@@ -94,14 +94,14 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-1">
-                      <card.icon className="w-5 h-5 text-primary shrink-0" />
-                      <h3 className="font-display text-lg font-semibold">{card.title}</h3>
-                      <ChevronDown className={`w-4 h-4 text-muted-foreground ml-auto transition-transform duration-300 ${zeitenOpen ? "rotate-180" : ""}`} />
+                  <div className="p-3 sm:p-5">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                      <card.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                      <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{card.title}</h3>
+                      <ChevronDown className={`w-3.5 h-3.5 sm:w-4 sm:h-4 text-muted-foreground ml-auto transition-transform duration-300 ${zeitenOpen ? "rotate-180" : ""}`} />
                     </div>
                     {!zeitenOpen && (
-                      <p className="text-foreground font-body text-base mt-1">Details anzeigen</p>
+                      <p className="text-foreground font-body text-xs sm:text-base mt-1">Details anzeigen</p>
                     )}
                     <AnimatePresence initial={false}>
                       {zeitenOpen && (
@@ -111,21 +111,21 @@ const InfoSection = () => {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="space-y-3 mt-2"
+                          className="space-y-2 sm:space-y-3 mt-2"
                         >
                           <div>
-                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Trucker</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr 17:00 – So 22:00 Uhr</p>
+                            <p className="text-primary font-display text-[10px] sm:text-xs font-bold tracking-wide uppercase">Trucker</p>
+                            <p className="text-muted-foreground font-body text-[10px] sm:text-xs mt-0.5">Fr 17:00 – So 22:00</p>
                           </div>
                           <div>
-                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Camper</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr 17:00 – So 20:00 Uhr</p>
+                            <p className="text-primary font-display text-[10px] sm:text-xs font-bold tracking-wide uppercase">Camper</p>
+                            <p className="text-muted-foreground font-body text-[10px] sm:text-xs mt-0.5">Fr 17:00 – So 20:00</p>
                           </div>
                           <div>
-                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Zuschauer</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr: Konzert ab 19:00 (Einlass), 20:00 (Beginn)</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">Sa: Gelände 10–18 Uhr / Konzert ab 18:00, 19:00 (Beginn)</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">So: Gelände 10–18 Uhr</p>
+                            <p className="text-primary font-display text-[10px] sm:text-xs font-bold tracking-wide uppercase">Zuschauer</p>
+                            <p className="text-muted-foreground font-body text-[10px] sm:text-xs mt-0.5">Fr: Konzert 19:00 / 20:00</p>
+                            <p className="text-muted-foreground font-body text-[10px] sm:text-xs mt-0.5">Sa: 10–18 / Konzert 18:00 / 19:00</p>
+                            <p className="text-muted-foreground font-body text-[10px] sm:text-xs mt-0.5">So: 10–18 Uhr</p>
                           </div>
                         </motion.div>
                       )}
@@ -158,18 +158,18 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-1">
-                      <card.icon className="w-5 h-5 text-primary shrink-0" />
-                      <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                  <div className="p-3 sm:p-5">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                      <card.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                      <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{card.title}</h3>
                     </div>
                     {isDownload ? (
-                      <div className="flex items-center gap-2 mt-2 text-primary">
-                        <Download className="w-4 h-4 shrink-0" />
-                        <span className="font-display font-bold text-sm tracking-wider">Download</span>
+                      <div className="flex items-center gap-1.5 sm:gap-2 mt-2 text-primary">
+                        <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                        <span className="font-display font-bold text-xs sm:text-sm tracking-wider">Download</span>
                       </div>
                     ) : (
-                      <p className="text-foreground font-body text-base mt-1">{card.line1}</p>
+                      <p className="text-foreground font-body text-xs sm:text-base mt-1">{card.line1}</p>
                     )}
                   </div>
                 </Wrapper>
