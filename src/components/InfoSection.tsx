@@ -92,14 +92,14 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-5 pt-4 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-2">
+                  <div className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 mb-1">
                       <card.icon className="w-5 h-5 text-primary shrink-0" />
                       <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                       <ChevronDown className={`w-4 h-4 text-muted-foreground ml-auto transition-transform duration-300 ${zeitenOpen ? "rotate-180" : ""}`} />
                     </div>
                     {!zeitenOpen && (
-                      <p className="text-muted-foreground font-body text-sm">Details anzeigen</p>
+                      <p className="text-foreground font-body text-base mt-1">Details anzeigen</p>
                     )}
                     <AnimatePresence initial={false}>
                       {zeitenOpen && (
@@ -109,7 +109,7 @@ const InfoSection = () => {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="space-y-3"
+                          className="space-y-3 mt-2"
                         >
                           <div>
                             <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Trucker</p>
@@ -122,7 +122,7 @@ const InfoSection = () => {
                           <div>
                             <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Zuschauer</p>
                             <p className="text-muted-foreground font-body text-xs mt-0.5">Fr: Konzert ab 19:00 (Einlass), 20:00 (Beginn)</p>
-                            <p className="text-muted-foreground font-body text-xs mt-0.5">Sa: Gelände 10–18 Uhr / Konzert ab 18:00 (Einlass), 19:00 (Beginn)</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">Sa: Gelände 10–18 Uhr / Konzert ab 18:00, 19:00 (Beginn)</p>
                             <p className="text-muted-foreground font-body text-xs mt-0.5">So: Gelände 10–18 Uhr</p>
                           </div>
                         </motion.div>
@@ -156,30 +156,20 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  {isDownload ? (
-                    <>
-                      <div className="p-5 pt-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <card.icon className="w-5 h-5 text-primary shrink-0" />
-                          <h3 className="font-display text-lg font-semibold">{card.title}</h3>
-                        </div>
-                        <p className="text-foreground font-body text-base">{card.line1}</p>
-                      </div>
-                      <div className="bg-primary px-5 py-3 flex items-center justify-center gap-2">
-                        <Download className="w-5 h-5 text-primary-foreground" />
-                        <span className="font-display text-primary-foreground font-bold tracking-wider">Download</span>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="p-5 pt-4 flex flex-col justify-center">
-                      <div className="flex items-center gap-2 mb-2">
-                        <card.icon className="w-5 h-5 text-primary shrink-0" />
-                        <h3 className="font-display text-lg font-semibold">{card.title}</h3>
-                      </div>
-                      <p className="text-foreground font-body text-base">{card.line1}</p>
-                      {card.line2 && <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>}
+                  <div className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 mb-1">
+                      <card.icon className="w-5 h-5 text-primary shrink-0" />
+                      <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                     </div>
-                  )}
+                    {isDownload ? (
+                      <div className="flex items-center gap-2 mt-2 text-primary">
+                        <Download className="w-4 h-4 shrink-0" />
+                        <span className="font-display font-bold text-sm tracking-wider">Download</span>
+                      </div>
+                    ) : (
+                      <p className="text-foreground font-body text-base mt-1">{card.line1}</p>
+                    )}
+                  </div>
                 </Wrapper>
               </motion.div>
             );
