@@ -80,7 +80,7 @@ const highlights = [
     icon: Truck,
     title: "Monstertruckshow",
     short: "Pure Action mit spektakulären Manövern.",
-    desc: "Die Monstertruckshow bringt pure Action auf das Festivalgelände, wenn die gewaltigen Fahrzeuge mit kraftvollen Manövern und spektakulären Sprüngen begeistern. Dabei demonstrieren die Trucks eindrucksvoll Leistung, Kontrolle und Show-Charakter zugleich.",
+    desc: "Die Monstertruckshow bringt pure Action auf das Festivalgelände, wenn die gewaltigen Fahrzeuge mit kraftvollen Manövern und spektakulären Sprüngen begeistern. Dabei demonstrieren die Trucks eindrucksvoll Leistung, Kontrolle und Show-Charakter zugleich. Die beiden Monstertruckshows finden am Samstagnachmittag statt und sind ein weiteres Highlight auf dem Truck & Country Festival.",
     img: hlMonstertruck,
   },
   {
