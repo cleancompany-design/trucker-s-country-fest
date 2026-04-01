@@ -4,6 +4,7 @@ import { Music, Calendar } from "lucide-react";
 import lineupBg from "@/assets/lineup-bg.jpg";
 import artistCashbags from "@/assets/artist-cashbags.png";
 import artistAlina from "@/assets/artist-alina.png";
+import artistTruckstop from "@/assets/artist-truckstop.png";
 import artistLinda from "@/assets/artist-linda.png";
 import artistJonny from "@/assets/artist-jonny.png";
 
