@@ -31,7 +31,7 @@ const Impressum = () => {
             <section>
               <h2 className="font-display text-2xl font-semibold mb-3">Kontakt</h2>
               <p>
-                Telefon: +49 3591 6788 745<br />
+                Telefon: 0160/7973053<br />
                 E-Mail: info@ovwa.de
               </p>
             </section>

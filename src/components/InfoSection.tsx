@@ -6,7 +6,7 @@ import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
 import infoZeiten from "@/assets/info-zeiten.jpg";
 import infoKlassen from "@/assets/info-klasseneinteilung.jpg";
-import klasseneinteilungPdf from "@/assets/Klasseneinteilung-Truck-und-Country-Festival.pdf";
+import klasseneinteilungPdf from "@/assets/Klasseneinteilung-Truck-und-Country-Festival-5.pdf";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
@@ -40,12 +40,13 @@ const infoCards = [
 ];
 
 const tickets = [
-  { name: "Konzertticket: The Cashbags (Fr)", price: "€15,00" },
-  { name: "Konzertticket: Alina Sebastian & Truck Stop (Sa)", price: "€29,00" },
-  { name: "Tagesticket", price: "ab €25,00" },
-  { name: "Wochenendticket", price: "ab €40,00" },
-  { name: "Wochenendticket inkl. Truck-Anmeldung", price: "ab €15,00" },
-  { name: "Wochenendticket inkl. Camping", price: "ab €24,00" },
+  { name: "Tagesticket", price: "ab €25,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-samstag" },
+  { name: "Wochenendticket", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-wochenendticket" },
+  { name: "Wochenendticket\ninkl. Camping", price: "ab €24,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-camping" },
+  { name: "Wochenendticket\ninkl. Truck-Anmeldung", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-truck-anmeldung" },
+  { name: "Wochenendticket\ninkl. Truck-Gruppenanmeldung", price: "ab €40,00", url: "https://forms.gle/KRgPkr4t2JJNHXUT7" },
+  { name: "Konzertticket:\nAlina Sebastian & Truck Stop", price: "€29,00", url: "https://shop.dekra-lausitzring.de/products/alina-sebastian-und-truck-stop" },
+  { name: "Konzertticket:\nThe Cashbags", price: "€15,00", url: "https://shop.dekra-lausitzring.de/products/the-cashbags", centered: true },
 ];
 
 const InfoSection = () => {
@@ -190,20 +191,23 @@ const InfoSection = () => {
               Tickets im <span className="text-primary">Überblick</span>
             </span>
           </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto">
              {tickets.map((t, i) => (
-              <motion.div
+              <motion.a
                 key={t.name}
+                href={t.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="card-rugged rounded-lg p-3 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4"
+                className={`card-rugged rounded-lg p-3 sm:p-5 flex flex-col items-center text-center gap-1 sm:gap-2 cursor-pointer${(t as any).centered ? " col-start-2" : ""}`}
               >
-                <span className="font-body text-foreground font-medium text-xs sm:text-sm">{t.name}</span>
+                <span className="font-body text-foreground font-medium text-xs sm:text-sm whitespace-pre-line">{t.name}</span>
                 <span className="font-display text-primary font-bold text-base sm:text-lg whitespace-nowrap">{t.price}</span>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>

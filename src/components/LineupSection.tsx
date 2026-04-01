@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Music, Calendar } from "lucide-react";
 import lineupBg from "@/assets/lineup-bg.jpg";
 import artistCashbags from "@/assets/artist-cashbags.png";
 import artistAlina from "@/assets/artist-alina.png";
+import artistTruckstop from "@/assets/artist-truckstop.png";
 import artistLinda from "@/assets/artist-linda.png";
 import artistJonny from "@/assets/artist-jonny.png";
 
@@ -11,26 +13,96 @@ const days = [
     day: "Freitag",
     date: "07.08.2026",
     acts: [
-      { time: "20:00 – 22:00 Uhr", name: "The Cashbags", img: artistCashbags },
+      {
+        time: "20:00 – 22:00 Uhr",
+        name: "The Cashbags",
+        img: artistCashbags,
+        desc: "Freitagabend findet das Konzert der Band The Cashbags statt. Für diesen Konzertabend ist ein separates Zusatzticket erforderlich. The Cashbags zählen zu den authentischsten Johnny-Cash-Tribute-Bands Europas und begeistern mit einer detailgetreuen Show, originalgetreuen Outfits und beeindruckender Bühnenpräsenz. Im Anschluss sorgt DJ Henri Rutz mit seinem Set für einen stimmungsvollen Ausklang des Abends und perfektioniert den Start in das Festivalwochenende.",
+      },
     ],
   },
   {
     day: "Samstag",
     date: "08.08.2026",
     acts: [
-      { time: "19:00 – 20:30 Uhr", name: "Alina Sebastian", img: artistAlina },
-      { time: "20:30 – 22:30 Uhr", name: "Truck Stop", img: null },
+      {
+        time: "19:00 – 20:30 Uhr",
+        name: "Alina Sebastian",
+        img: artistAlina,
+        desc: "Alina Sebastian begeistert mit einer kraftvollen Stimme, authentischen Texten und einer Bühnenpräsenz, die sofort Nähe schafft. Ihre Musik verbindet moderne Pop-Elemente mit emotionalem Singer-Songwriter-Sound und erzählt Geschichten, die berühren und mitreißen. Live überzeugt sie mit natürlicher Ausstrahlung, musikalischer Präzision und einer Energie, die das Publikum sofort einfängt. Alina Sebastian steht für ehrliche Musik, starke Emotionen und besondere Momente, die lange nachklingen.",
+      },
+      {
+        time: "20:30 – 22:30 Uhr",
+        name: "Truck Stop",
+        img: artistTruckstop,
+        desc: "Truck Stop ist die Kultband des deutschen Country und seit Jahrzehnten ein Garant für gute Stimmung, starke Songs und echte Western-Atmosphäre. Mit ihrem unverwechselbaren Sound, eingängigen Melodien und charismatischem Bühnenauftritt begeistern sie Fans aller Generationen. Live liefern sie eine energiegeladene Show voller Hits, Humor und Herzblut. Truck Stop verbindet Tradition mit modernem Country-Feeling und sorgt für ein Konzerterlebnis, das sofort ins Ohr geht und lange im Gedächtnis bleibt.",
+      },
     ],
   },
   {
     day: "Sonntag",
     date: "09.08.2026",
     acts: [
-      { time: "13:30 – 14:30 Uhr", name: "Linda Feller", img: artistLinda },
-      { time: "14:30 – 15:30 Uhr", name: "Jonny Hill", img: artistJonny },
+      {
+        time: "13:30 – 14:30 Uhr",
+        name: "Linda Feller",
+        img: artistLinda,
+        desc: "Linda Feller bringt am Sonntagnachmittag echten Glanz auf die Bühne. Mit ihrer warmen Stimme, ihrem modernen Country-Sound und ihrer charmanten Art sorgt sie für einen emotionalen, kraftvollen Abschluss des Festivalwochenendes. Sie verbindet Tradition mit frischem Drive und schafft Momente, die direkt ins Herz gehen. Ihr Konzert ist für alle Zuschauer, Fahrer und Beifahrer im Wochenendticket enthalten und garantiert einen Ausklang, der lange nachklingt.",
+      },
+      {
+        time: "14:30 – 15:30 Uhr",
+        name: "Jonny Hill",
+        img: artistJonny,
+        desc: "Jonny Hill sorgt am Sonntagnachmittag für einen besonderen musikalischen Abschluss. Mit seiner markanten Erzählstimme, seinen zeitlosen Songs und der legendären Truckerhymne, die Generationen von Fahrern begleitet hat, bringt er echtes Country-Feeling auf die Bühne. Seine Lieder erzählen Geschichten von Freiheit, Straße und Leben – authentisch, warm und voller Gefühl. Auch sein Konzert ist für alle Zuschauer, Fahrer und Beifahrer im Wochenendticket enthalten und rundet das Festival mit Gänsehautmomenten ab.",
+      },
     ],
   },
 ];
+
+const ActCard = ({ act }: { act: typeof days[0]["acts"][0] }) => {
+  const [flipped, setFlipped] = useState(false);
+  const hasDesc = !!act.desc;
+
+  return (
+    <div
+      className={`flex-1 flex items-center justify-center transition-colors ${hasDesc ? "cursor-pointer hover:bg-primary/5" : ""}`}
+      onClick={() => hasDesc && setFlipped(!flipped)}
+    >
+      {flipped && hasDesc ? (
+        <div className="px-4 sm:px-6 py-4 sm:py-5 w-full">
+          <p className="text-muted-foreground font-body text-xs sm:text-sm leading-relaxed">
+            {act.desc}
+          </p>
+        </div>
+      ) : (
+        <div className="grid w-full max-w-[22rem] grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5">
+          <div className="flex items-center justify-center">
+            {act.img ? (
+              <img
+                src={act.img}
+                alt={act.name}
+                loading="lazy"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
+              />
+            ) : (
+              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
+                <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
+              </div>
+            )}
+          </div>
+          <div className="text-left">
+            <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
+              {act.time}
+            </span>
+            <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
+              {act.name}
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const LineupSection = () => {
   return (
@@ -82,35 +154,7 @@ const LineupSection = () => {
 
               <div className="divide-y divide-border flex-1 flex flex-col">
                 {day.acts.map((act) => (
-                  <div
-                    key={act.name}
-                    className="flex-1 flex items-center justify-center hover:bg-primary/5 transition-colors"
-                  >
-                    <div className="grid w-full max-w-[22rem] grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] items-center gap-3 sm:gap-4 px-3 sm:px-6 py-3 sm:py-5">
-                      <div className="flex items-center justify-center">
-                        {act.img ? (
-                          <img
-                            src={act.img}
-                            alt={act.name}
-                            loading="lazy"
-                            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-primary/30 shrink-0"
-                          />
-                        ) : (
-                          <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/10 border-2 border-primary/30 shrink-0 flex items-center justify-center">
-                            <Music className="w-10 h-10 sm:w-14 sm:h-14 text-primary/40" />
-                          </div>
-                        )}
-                      </div>
-                      <div className="text-left">
-                        <span className="font-body text-primary font-semibold text-xs sm:text-sm block mb-0.5 sm:mb-1">
-                          {act.time}
-                        </span>
-                        <span className="font-display text-base sm:text-2xl font-bold tracking-wide">
-                          {act.name}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <ActCard key={act.name} act={act} />
                 ))}
               </div>
             </motion.div>
