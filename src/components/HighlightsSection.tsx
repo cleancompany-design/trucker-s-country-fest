@@ -73,7 +73,7 @@ const highlights = [
     icon: Gamepad2,
     title: "RC Truck Trial",
     short: "Offroad-Wettbewerb im Modellformat.",
-    desc: "Der RC Truck Trial überträgt die Faszination des Offroad-Wettbewerbs ins Modellformat und fordert Präzision, Technikverständnis und Fingerspitzengefühl. Auf einem anspruchsvollen Parcours treten detailgetreue RC-Trucks gegeneinander an und sorgen für Spannung im Kleinformat.",
+    desc: "Handgebaute Lkw-Unikate, anspruchsvolle Geländeparcours und maximale Präzision am Steuer – das ist RC Truck Trial. Detailgetreue Modell-Trucks bewegen sich durch technisch fordernde Sektionen mit Steigungen, Verschränkungen und engen Toren. Entscheidend ist nicht Geschwindigkeit, sondern exakte Fahrzeugkontrolle, saubere Linienwahl und fahrerisches Können. Alle Fahrzeuge sind individuelle Eigenbauten, die mit technischem Know-how, handwerklichem Können und viel Leidenschaft entstehen.",
     img: hlRctruck,
   },
   {
