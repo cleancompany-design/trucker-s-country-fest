@@ -14,14 +14,12 @@ const infoCards = [
     icon: Calendar,
     title: "Datum",
     line1: "7. – 9. August 2026",
-    line2: "Freitag bis Sonntag",
     img: infoDatum,
   },
   {
     icon: MapPin,
     title: "Location",
     line1: "DEKRA Lausitzring",
-    line2: "Klettwitz",
     img: infoLocation,
   },
   {
@@ -70,7 +68,7 @@ const InfoSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 items-start">
           {infoCards.map((card, i) => {
             const isDownload = 'download' in card && card.download;
             const isExpandable = 'expandable' in card && card.expandable;
@@ -94,25 +92,17 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-5 pt-4">
+                  <div className="p-5 pt-4 flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-2">
                       <card.icon className="w-5 h-5 text-primary shrink-0" />
                       <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                       <ChevronDown className={`w-4 h-4 text-muted-foreground ml-auto transition-transform duration-300 ${zeitenOpen ? "rotate-180" : ""}`} />
                     </div>
+                    {!zeitenOpen && (
+                      <p className="text-muted-foreground font-body text-sm">Details anzeigen</p>
+                    )}
                     <AnimatePresence initial={false}>
-                      {!zeitenOpen ? (
-                        <motion.div
-                          key="summary"
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <p className="text-foreground font-body text-base">Fr – So</p>
-                          <p className="text-muted-foreground font-body text-sm mt-1">Details anzeigen</p>
-                        </motion.div>
-                      ) : (
+                      {zeitenOpen && (
                         <motion.div
                           key="details"
                           initial={{ opacity: 0, height: 0 }}
@@ -181,13 +171,13 @@ const InfoSection = () => {
                       </div>
                     </>
                   ) : (
-                    <div className="p-5 pt-4">
+                    <div className="p-5 pt-4 flex flex-col justify-center">
                       <div className="flex items-center gap-2 mb-2">
                         <card.icon className="w-5 h-5 text-primary shrink-0" />
                         <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                       </div>
                       <p className="text-foreground font-body text-base">{card.line1}</p>
-                      <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+                      {card.line2 && <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>}
                     </div>
                   )}
                 </Wrapper>
