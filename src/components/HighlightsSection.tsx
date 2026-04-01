@@ -66,7 +66,7 @@ const highlights = [
     icon: Bird,
     title: "Falknerei",
     short: "Greifvogel-Flugshows.",
-    desc: "Eindrucksvolle Greifvogel-Flugshows über dem Festivalgelände. Adler, Falken und Bussarde im freien Flug – eine naturverbundene Erlebnisdimension.",
+    desc: "Erfahrene Falkner des Jagdfalkenhofs Schaaf präsentieren an beiden Veranstaltungstagen eindrucksvolle Flugvorführungen. Insgesamt elf Greifvögel zeigen in zwei Shows pro Tag ihre beeindruckenden Flugkünste. Besucher erleben die Tiere aus nächster Nähe, wenn Adler, Falken und Bussarde lautlos über das Gelände gleiten und ihre Schnelligkeit sowie Präzision demonstrieren. Gleichzeitig erhalten sie spannende Einblicke in die traditionsreiche Kunst der Falknerei und den respektvollen Umgang mit diesen faszinierenden Tieren.",
     img: hlFalconry,
   },
   {
