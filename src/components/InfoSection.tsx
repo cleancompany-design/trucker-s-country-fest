@@ -35,7 +35,7 @@ const infoCards = [
     line1: "Übersicht der Fahrzeug-Kategorien",
     line2: "Alle Klassen & Kategorien",
     img: infoKlassen,
-    download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
+    download: klasseneinteilungPdf,
   },
 ];
 
