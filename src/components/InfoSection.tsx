@@ -33,9 +33,9 @@ const infoCards = [
   {
     icon: FileText,
     title: "Klasseneinteilung",
-    line1: "Truck Trial EM 2026",
+    line1: "Übersicht der Fahrzeug-Kategorien",
     line2: "Alle Klassen & Kategorien",
-    img: infoTickets,
+    img: infoKlassen,
     download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
   },
 ];
