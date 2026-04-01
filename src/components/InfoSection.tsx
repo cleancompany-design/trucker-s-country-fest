@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Clock, Ticket, Info } from "lucide-react";
+import { MapPin, Calendar, Clock, FileText, Info, Download } from "lucide-react";
 
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
