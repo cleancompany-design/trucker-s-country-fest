@@ -158,18 +158,18 @@ const InfoSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-1">
-                      <card.icon className="w-5 h-5 text-primary shrink-0" />
-                      <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                  <div className="p-3 sm:p-5">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                      <card.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                      <h3 className="font-display text-sm sm:text-lg font-semibold truncate">{card.title}</h3>
                     </div>
                     {isDownload ? (
-                      <div className="flex items-center gap-2 mt-2 text-primary">
-                        <Download className="w-4 h-4 shrink-0" />
-                        <span className="font-display font-bold text-sm tracking-wider">Download</span>
+                      <div className="flex items-center gap-1.5 sm:gap-2 mt-2 text-primary">
+                        <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                        <span className="font-display font-bold text-xs sm:text-sm tracking-wider">Download</span>
                       </div>
                     ) : (
-                      <p className="text-foreground font-body text-base mt-1">{card.line1}</p>
+                      <p className="text-foreground font-body text-xs sm:text-base mt-1">{card.line1}</p>
                     )}
                   </div>
                 </Wrapper>
