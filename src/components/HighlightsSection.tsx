@@ -92,9 +92,9 @@ const highlights = [
   },
   {
     icon: Gauge,
-    title: "¼ Meile",
+    title: "¼ Meile Rennen & Truck Korso",
     short: "Der rohe Beschleunigungs-Vergleich.",
-    desc: "Auf der ¼ Meile treten Trucks im direkten Beschleunigungsvergleich gegeneinander an und demonstrieren eindrucksvoll ihre Leistungsfähigkeit. Das Format sorgt für spürbare Spannung, hohe Zuschauerbindung und einen klaren Fokus auf Performance und Technik.",
+    desc: "Ihr wollt euren Truck nicht nur ausstellen, sondern zeigen, was unter der Motorhaube steckt? Dann nutzt unsere zwei Highlights: Beim Truck-Korso fahren zahlreiche Trucks gemeinsam über Hochgeschwindigkeitsoval und Rennstrecke – ein Erlebnis, das lange bleibt. Beim ¼-Meile-Showrennen zählt pure Schnelligkeit: Sobald die Ampel auf Grün springt, kann jeder Fahrer seine Maschine voll ausreizen und zeigen, was in ihm und seinem Truck steckt. Die Anmeldung erfolgt über den Ticketshop oder die Gruppenanmeldung.",
     img: hlViertelmeile,
   },
   {
