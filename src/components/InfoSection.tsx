@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { MapPin, Calendar, Clock, FileText, Info, Download, Ticket } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Calendar, Clock, FileText, Info, Download, Ticket, ChevronDown } from "lucide-react";
 
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
@@ -20,15 +21,14 @@ const infoCards = [
     icon: MapPin,
     title: "Location",
     line1: "DEKRA Lausitzring",
-    line2: "Offroad-Gelände, Klettwitz",
+    line2: "Klettwitz",
     img: infoLocation,
   },
   {
     icon: Clock,
     title: "Öffnungszeiten",
-    line1: "Ganztägig",
-    line2: "Camping ab Freitag möglich",
     img: infoZeiten,
+    expandable: true,
   },
   {
     icon: FileText,
@@ -50,6 +50,8 @@ const tickets = [
 ];
 
 const InfoSection = () => {
+  const [zeitenOpen, setZeitenOpen] = useState(false);
+
   return (
     <section id="infos" className="pt-8 sm:pt-12 pb-20 sm:pb-28 px-4 scroll-mt-8">
       <div className="max-w-7xl mx-auto">
@@ -71,9 +73,79 @@ const InfoSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {infoCards.map((card, i) => {
             const isDownload = 'download' in card && card.download;
+            const isExpandable = 'expandable' in card && card.expandable;
+            const isAnimated = isDownload;
+
+            if (isExpandable) {
+              return (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300 cursor-pointer"
+                  onClick={() => setZeitenOpen(!zeitenOpen)}
+                >
+                  <div className="relative h-36 overflow-hidden">
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-5 pt-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <card.icon className="w-5 h-5 text-primary shrink-0" />
+                      <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                      <ChevronDown className={`w-4 h-4 text-muted-foreground ml-auto transition-transform duration-300 ${zeitenOpen ? "rotate-180" : ""}`} />
+                    </div>
+                    <AnimatePresence initial={false}>
+                      {!zeitenOpen ? (
+                        <motion.div
+                          key="summary"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <p className="text-foreground font-body text-base">Fr – So</p>
+                          <p className="text-muted-foreground font-body text-sm mt-1">Details anzeigen</p>
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="details"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="space-y-3"
+                        >
+                          <div>
+                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Trucker</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr 17:00 – So 22:00 Uhr</p>
+                          </div>
+                          <div>
+                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Camper</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr 17:00 – So 20:00 Uhr</p>
+                          </div>
+                          <div>
+                            <p className="text-primary font-display text-xs font-bold tracking-wide uppercase">Zuschauer</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">Fr: Konzert ab 19:00 (Einlass), 20:00 (Beginn)</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">Sa: Gelände 10–18 Uhr / Konzert ab 18:00 (Einlass), 19:00 (Beginn)</p>
+                            <p className="text-muted-foreground font-body text-xs mt-0.5">So: Gelände 10–18 Uhr</p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              );
+            }
+
             const Wrapper = isDownload ? 'a' : 'div';
             const wrapperProps = isDownload
-              ? { href: card.download, download: true, target: "_blank" as const, rel: "noopener noreferrer" }
+              ? { href: (card as any).download, download: true, target: "_blank" as const, rel: "noopener noreferrer" }
               : {};
 
             return (
@@ -83,7 +155,7 @@ const InfoSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -4, transition: { duration: 0.25 } }}
+                whileHover={isAnimated ? { y: -4, transition: { duration: 0.25 } } : undefined}
                 className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
               >
                 <Wrapper {...wrapperProps as any} className={isDownload ? "block cursor-pointer" : undefined}>
