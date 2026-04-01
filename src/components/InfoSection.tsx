@@ -40,12 +40,13 @@ const infoCards = [
 ];
 
 const tickets = [
-  { name: "Konzertticket: The Cashbags (Fr)", price: "€15,00" },
-  { name: "Konzertticket: Alina Sebastian & Truck Stop (Sa)", price: "€29,00" },
-  { name: "Tagesticket", price: "ab €25,00" },
-  { name: "Wochenendticket", price: "ab €40,00" },
-  { name: "Wochenendticket inkl. Truck-Anmeldung", price: "ab €15,00" },
-  { name: "Wochenendticket inkl. Camping", price: "ab €24,00" },
+  { name: "Tagesticket", price: "ab €25,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-samstag" },
+  { name: "Wochenendticket", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-wochenendticket" },
+  { name: "Wochenendticket\ninkl. Camping", price: "ab €24,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-camping" },
+  { name: "Wochenendticket\ninkl. Truck-Anmeldung", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-truck-anmeldung" },
+  { name: "Wochenendticket\ninkl. Truck-Gruppenanmeldung", price: "ab €40,00", url: "https://forms.gle/KRgPkr4t2JJNHXUT7" },
+  { name: "Konzertticket:\nAlina Sebastian & Truck Stop", price: "€29,00", url: "https://shop.dekra-lausitzring.de/products/alina-sebastian-und-truck-stop" },
+  { name: "Konzertticket:\nThe Cashbags", price: "€15,00", url: "https://shop.dekra-lausitzring.de/products/the-cashbags", centered: true },
 ];
 
 const InfoSection = () => {
