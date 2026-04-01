@@ -31,11 +31,12 @@ const infoCards = [
     img: infoZeiten,
   },
   {
-    icon: Ticket,
-    title: "Tickets",
-    line1: "Jetzt verfügbar",
-    line2: "Tages- & Wochenendtickets",
+    icon: FileText,
+    title: "Klasseneinteilung",
+    line1: "Truck Trial EM 2026",
+    line2: "Alle Klassen & Kategorien",
     img: infoTickets,
+    download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
   },
 ];
 
