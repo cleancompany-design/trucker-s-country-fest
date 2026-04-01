@@ -25,7 +25,7 @@ const Datenschutz = () => {
                 OVWA GmbH<br />
                 Vor dem Schülertor 1a<br />
                 02625 Bautzen<br />
-                Telefon: +49 3591 6788 745<br />
+                Telefon: 0160/7973053<br />
                 E-Mail: info@ovwa.de
               </p>
             </section>
