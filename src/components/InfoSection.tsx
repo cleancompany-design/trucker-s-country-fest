@@ -68,7 +68,7 @@ const InfoSection = () => {
           <div className="section-divider w-48 mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 items-start">
           {infoCards.map((card, i) => {
             const isDownload = 'download' in card && card.download;
             const isExpandable = 'expandable' in card && card.expandable;
