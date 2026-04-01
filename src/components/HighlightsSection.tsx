@@ -197,16 +197,16 @@ const HighlightsSection = () => {
           >
             <button
               onClick={goPrev}
-              className="absolute left-4 sm:left-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
+              className="absolute left-4 sm:left-8 z-10 bg-transparent sm:bg-primary text-primary sm:text-primary-foreground rounded-full p-2 sm:p-3 hover:brightness-110 transition-all"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-7 h-7 sm:w-6 sm:h-6" />
             </button>
 
             <button
               onClick={goNext}
-              className="absolute right-4 sm:right-8 z-10 bg-primary text-primary-foreground rounded-full p-3 hover:brightness-110 transition-all"
+              className="absolute right-4 sm:right-8 z-10 bg-transparent sm:bg-primary text-primary sm:text-primary-foreground rounded-full p-2 sm:p-3 hover:brightness-110 transition-all"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-7 h-7 sm:w-6 sm:h-6" />
             </button>
 
             <motion.div
