@@ -6,6 +6,7 @@ import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
 import infoZeiten from "@/assets/info-zeiten.jpg";
 import infoKlassen from "@/assets/info-klasseneinteilung.jpg";
+import klasseneinteilungPdf from "@/assets/Klasseneinteilung-Truck-und-Country-Festival.pdf";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
@@ -34,7 +35,7 @@ const infoCards = [
     line1: "Übersicht der Fahrzeug-Kategorien",
     line2: "Alle Klassen & Kategorien",
     img: infoKlassen,
-    download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
+    download: klasseneinteilungPdf,
   },
 ];
 
