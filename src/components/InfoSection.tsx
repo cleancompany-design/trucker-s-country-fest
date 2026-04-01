@@ -14,14 +14,12 @@ const infoCards = [
     icon: Calendar,
     title: "Datum",
     line1: "7. – 9. August 2026",
-    line2: "Freitag bis Sonntag",
     img: infoDatum,
   },
   {
     icon: MapPin,
     title: "Location",
     line1: "DEKRA Lausitzring",
-    line2: "Klettwitz",
     img: infoLocation,
   },
   {
