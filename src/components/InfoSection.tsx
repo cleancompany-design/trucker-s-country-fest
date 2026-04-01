@@ -4,7 +4,7 @@ import { MapPin, Calendar, Clock, FileText, Info, Download, Ticket } from "lucid
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
 import infoZeiten from "@/assets/info-zeiten.jpg";
-import infoTickets from "@/assets/info-tickets.jpg";
+import infoKlassen from "@/assets/info-klasseneinteilung.jpg";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
@@ -33,9 +33,9 @@ const infoCards = [
   {
     icon: FileText,
     title: "Klasseneinteilung",
-    line1: "Truck Trial EM 2026",
+    line1: "Übersicht der Fahrzeug-Kategorien",
     line2: "Alle Klassen & Kategorien",
-    img: infoTickets,
+    img: infoKlassen,
     download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
   },
 ];
