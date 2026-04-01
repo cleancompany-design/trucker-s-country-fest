@@ -171,13 +171,13 @@ const InfoSection = () => {
                       </div>
                     </>
                   ) : (
-                    <div className="p-5 pt-4">
+                    <div className="p-5 pt-4 flex flex-col justify-center">
                       <div className="flex items-center gap-2 mb-2">
                         <card.icon className="w-5 h-5 text-primary shrink-0" />
                         <h3 className="font-display text-lg font-semibold">{card.title}</h3>
                       </div>
                       <p className="text-foreground font-body text-base">{card.line1}</p>
-                      <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+                      {card.line2 && <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>}
                     </div>
                   )}
                 </Wrapper>
