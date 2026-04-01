@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Clock, Ticket, Info } from "lucide-react";
+import { MapPin, Calendar, Clock, FileText, Info, Download, Ticket } from "lucide-react";
 
 import infoDatum from "@/assets/info-datum.jpg";
 import infoLocation from "@/assets/info-location.jpg";
@@ -31,11 +31,12 @@ const infoCards = [
     img: infoZeiten,
   },
   {
-    icon: Ticket,
-    title: "Tickets",
-    line1: "Jetzt verfügbar",
-    line2: "Tages- & Wochenendtickets",
+    icon: FileText,
+    title: "Klasseneinteilung",
+    line1: "Truck Trial EM 2026",
+    line2: "Alle Klassen & Kategorien",
     img: infoTickets,
+    download: "/downloads/Klasseneinteilung-Truck-und-Country-Festival.pdf",
   },
 ];
 
@@ -68,33 +69,59 @@ const InfoSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-          {infoCards.map((card, i) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -4, transition: { duration: 0.25 } }}
-              className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
-            >
-              <div className="relative h-36 overflow-hidden">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-5 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <card.icon className="w-5 h-5 text-primary shrink-0" />
-                  <h3 className="font-display text-lg font-semibold">{card.title}</h3>
-                </div>
-                <p className="text-foreground font-body text-base">{card.line1}</p>
-                <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
-              </div>
-            </motion.div>
-          ))}
+          {infoCards.map((card, i) => {
+            const isDownload = 'download' in card && card.download;
+            const Wrapper = isDownload ? 'a' : 'div';
+            const wrapperProps = isDownload
+              ? { href: card.download, download: true, target: "_blank" as const, rel: "noopener noreferrer" }
+              : {};
+
+            return (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -4, transition: { duration: 0.25 } }}
+                className="card-rugged rounded-lg overflow-hidden group hover:border-primary/50 transition-colors duration-300"
+              >
+                <Wrapper {...wrapperProps as any} className={isDownload ? "block cursor-pointer" : undefined}>
+                  <div className="relative h-36 overflow-hidden">
+                    <img
+                      src={card.img}
+                      alt={card.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  {isDownload ? (
+                    <>
+                      <div className="p-5 pt-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <card.icon className="w-5 h-5 text-primary shrink-0" />
+                          <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                        </div>
+                        <p className="text-foreground font-body text-base">{card.line1}</p>
+                      </div>
+                      <div className="bg-primary px-5 py-3 flex items-center justify-center gap-2">
+                        <Download className="w-5 h-5 text-primary-foreground" />
+                        <span className="font-display text-primary-foreground font-bold tracking-wider">Download</span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="p-5 pt-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <card.icon className="w-5 h-5 text-primary shrink-0" />
+                        <h3 className="font-display text-lg font-semibold">{card.title}</h3>
+                      </div>
+                      <p className="text-foreground font-body text-base">{card.line1}</p>
+                      <p className="text-muted-foreground font-body text-sm mt-1">{card.line2}</p>
+                    </div>
+                  )}
+                </Wrapper>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Ticket overview */}
