@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-truck.jpg";
-
+import tcfLogo from "@/assets/tcf-logo.png";
 
 import Countdown from "./Countdown";
 import { Calendar, MapPin } from "lucide-react";
@@ -19,6 +19,9 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
+
+      {/* TCF Logo top right */}
+      <img src={tcfLogo} alt="Truck & Country Festival 2026" className="absolute top-20 right-4 sm:top-22 sm:right-6 z-20 h-[3.6rem] sm:h-[6.3rem] lg:h-[8.1rem] drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-10 sm:mt-16 lg:mt-20">

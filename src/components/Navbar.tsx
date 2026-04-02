@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import dekraLogo from "@/assets/dekra-logo.png";
 import ovwaLogo from "@/assets/ovwa-logo.png";
-import tcfLogo from "@/assets/tcf-logo.png";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
@@ -53,15 +52,12 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="flex items-center gap-2">
-          <img src={tcfLogo} alt="Truck & Country Festival" className="h-10 sm:h-12" />
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 hover:bg-primary/10 rounded transition-colors"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-2 hover:bg-primary/10 rounded transition-colors"
+        >
+          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
 
       <AnimatePresence>
