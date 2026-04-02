@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import dekraLogo from "@/assets/dekra-logo.png";
 import ovwaLogo from "@/assets/ovwa-logo.png";
+import tcfLogo from "@/assets/tcf-logo.png";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
@@ -15,23 +16,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const highlightsEl = document.getElementById("highlights");
-      if (highlightsEl) {
-        const rect = highlightsEl.getBoundingClientRect();
-        setVisible(rect.top <= 100);
-      } else {
-        setVisible(window.scrollY > window.innerHeight * 0.85);
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const handleClick = (href: string) => {
     setMobileOpen(false);
