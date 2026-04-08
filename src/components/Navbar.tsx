@@ -7,7 +7,7 @@ import ovwaLogo from "@/assets/ovwa-logo.png";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
-const navLinks = [
+const navLinks: { label: string; href: string; isPage?: boolean }[] = [
   { label: "Highlights", href: "#highlights" },
   { label: "Line-Up", href: "#lineup" },
   { label: "Anfahrt", href: "#anfahrt" },
