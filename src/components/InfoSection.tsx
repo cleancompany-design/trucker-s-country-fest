@@ -42,7 +42,7 @@ const infoCards = [
 const tickets = [
   { name: "Tagesticket", price: "ab €25,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-samstag" },
   { name: "Wochenendticket", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-wochenendticket" },
-  { name: "Wochenendticket\ninkl. Camping", price: "ab €24,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-camping" },
+  { name: "Wochenendticket\ninkl. Camping", price: "ab €85,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-camping" },
   { name: "Wochenendticket\ninkl. Truck-Anmeldung", price: "ab €40,00", url: "https://shop.dekra-lausitzring.de/products/dekra-truck-und-country-festival-truck-anmeldung" },
   { name: "Wochenendticket\ninkl. Truck-Gruppenanmeldung", price: "ab €40,00", url: "https://forms.gle/KRgPkr4t2JJNHXUT7" },
   { name: "Konzertticket:\nAlina Sebastian & Truck Stop", price: "€29,00", url: "https://shop.dekra-lausitzring.de/products/alina-sebastian-und-truck-stop" },
