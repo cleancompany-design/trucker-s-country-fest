@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import dekraLogo from "@/assets/dekra-logo.png";
@@ -6,20 +7,31 @@ import ovwaLogo from "@/assets/ovwa-logo.png";
 
 const TICKET_URL = "https://shop.dekra-lausitzring.de/collections/truck-und-country-festival";
 
-const navLinks = [
+const navLinks: { label: string; href: string; isPage?: boolean }[] = [
   { label: "Highlights", href: "#highlights" },
   { label: "Line-Up", href: "#lineup" },
   { label: "Anfahrt", href: "#anfahrt" },
   { label: "Infos & Tickets", href: "#infos" },
+  { label: "FAQ", href: "/faq", isPage: true },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleClick = (href: string) => {
+  const handleClick = (link: typeof navLinks[0]) => {
     setMobileOpen(false);
+    if (link.isPage) {
+      navigate(link.href);
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate("/" + link.href);
+      return;
+    }
     setTimeout(() => {
-      const el = document.querySelector(href);
+      const el = document.querySelector(link.href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
@@ -36,7 +48,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button
               key={link.href}
-              onClick={() => handleClick(link.href)}
+              onClick={() => handleClick(link)}
               className="font-display text-sm tracking-wider px-3 py-2 rounded hover:text-primary hover:bg-primary/10 transition-colors"
             >
               {link.label}
@@ -72,7 +84,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.href}
-                  onClick={() => handleClick(link.href)}
+                  onClick={() => handleClick(link)}
                   className="font-display text-base tracking-wider px-4 py-3 rounded text-left hover:text-primary hover:bg-primary/10 transition-colors"
                 >
                   {link.label}
