@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Line-Up", href: "#lineup" },
   { label: "Anfahrt", href: "#anfahrt" },
   { label: "Infos & Tickets", href: "#infos" },
+  { label: "FAQ", href: "/faq", isPage: true },
 ];
 
 const Navbar = () => {
