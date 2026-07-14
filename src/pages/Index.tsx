@@ -18,6 +18,7 @@ const Index = () => {
       <HighlightsSection />
       
       <LineupSection />
+      <ProgrammSection />
       <AnfahrtSection />
       <InfoSection />
       <SponsorBanner />
