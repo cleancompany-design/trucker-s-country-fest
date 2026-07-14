@@ -82,9 +82,9 @@ const ProgrammSection = () => {
           className="text-center mb-10 sm:mb-12"
         >
           <h2 className="flex items-center justify-center gap-2 sm:gap-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-glow">
-            <CalendarClock className="w-8 h-8 sm:w-10 sm:h-10 text-primary shrink-0" />
-            <span>
-              Pro<span className="text-primary">gramm</span>
+            <CalendarClock className="w-8 h-8 sm:w-10 sm:h-10 text-white shrink-0" />
+            <span className="text-white">
+              Unser <span className="text-primary">Programm</span>
             </span>
           </h2>
           <p className="text-foreground/80 font-body text-base sm:text-lg max-w-2xl mx-auto mt-4">
