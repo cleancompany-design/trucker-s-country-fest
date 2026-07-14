@@ -71,6 +71,7 @@ const chips = [
 ];
 
 const ProgrammSection = () => {
+  const [openDay, setOpenDay] = useState<string | null>(null);
   return (
     <section id="programm" className="relative py-14 sm:py-20 lg:py-28 px-4 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
