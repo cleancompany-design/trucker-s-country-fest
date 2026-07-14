@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users, ChevronDown } from "lucide-react";
 
 type Item = { time: string; text: string; highlight?: boolean };
 type Day = { day: string; date: string; items: Item[] };
@@ -70,6 +71,7 @@ const chips = [
 ];
 
 const ProgrammSection = () => {
+  const [openDay, setOpenDay] = useState<string | null>(null);
   return (
     <section id="programm" className="relative py-14 sm:py-20 lg:py-28 px-4 scroll-mt-16">
       <div className="max-w-7xl mx-auto">
@@ -110,48 +112,74 @@ const ProgrammSection = () => {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:items-stretch">
-          {days.map((day, di) => (
-            <motion.div
-              key={day.day}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: di * 0.15 }}
-              className="card-rugged rounded-lg overflow-hidden flex flex-col"
-            >
-              <div className="bg-primary/10 border-b border-border px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3">
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                <h3 className="font-display text-base sm:text-2xl font-semibold tracking-wider">
-                  {day.day}
-                </h3>
-                <span className="text-muted-foreground font-body text-xs sm:text-sm ml-auto">
-                  {day.date}
-                </span>
-              </div>
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 items-start">
+          {days.map((day, di) => {
+            const isOpen = openDay === day.day;
+            return (
+              <motion.div
+                key={day.day}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: di * 0.15 }}
+                className="card-rugged rounded-lg overflow-hidden flex flex-col"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenDay(isOpen ? null : day.day)}
+                  aria-expanded={isOpen}
+                  className={`w-full bg-primary/10 hover:bg-primary/15 transition-colors px-3 sm:px-6 py-3 sm:py-4 flex items-center gap-2 sm:gap-3 text-left ${
+                    isOpen ? "border-b border-border" : ""
+                  }`}
+                >
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                  <h3 className="font-display text-base sm:text-2xl font-semibold tracking-wider">
+                    {day.day}
+                  </h3>
+                  <span className="text-muted-foreground font-body text-xs sm:text-sm ml-auto">
+                    {day.date}
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 transition-transform ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-              <ul className="divide-y divide-border flex-1">
-                {day.items.map((it, idx) => (
-                  <li
-                    key={`${it.time}-${idx}`}
-                    className="grid grid-cols-[6rem_1fr] sm:grid-cols-[6.5rem_1fr] gap-3 px-3 sm:px-5 py-2.5 sm:py-3"
-                  >
-                    <span className="font-body text-primary text-xs sm:text-sm font-semibold tabular-nums">
-                      {it.time}
-                    </span>
-                    <span
-                      className={`font-body text-xs sm:text-sm ${
-                        it.highlight ? "font-semibold text-foreground" : "text-foreground/85"
-                      }`}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.ul
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="divide-y divide-border overflow-hidden"
                     >
-                      {it.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                      {day.items.map((it, idx) => (
+                        <li
+                          key={`${it.time}-${idx}`}
+                          className="grid grid-cols-[6rem_1fr] sm:grid-cols-[6.5rem_1fr] gap-3 px-3 sm:px-5 py-2.5 sm:py-3"
+                        >
+                          <span className="font-body text-primary text-xs sm:text-sm font-semibold tabular-nums">
+                            {it.time}
+                          </span>
+                          <span
+                            className={`font-body text-xs sm:text-sm ${
+                              it.highlight ? "font-semibold text-foreground" : "text-foreground/85"
+                            }`}
+                          >
+                            {it.text}
+                          </span>
+                        </li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
+
 
         <p className="text-center text-xs text-muted-foreground mt-6 font-body">
           Programmänderungen vorbehalten.
