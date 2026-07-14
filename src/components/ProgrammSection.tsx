@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users, ChevronDown } from "lucide-react";
 
 type Item = { time: string; text: string; highlight?: boolean };
 type Day = { day: string; date: string; items: Item[] };
