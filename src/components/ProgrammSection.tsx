@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users, ChevronDown } from "lucide-react";
+import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users, ChevronDown, Download } from "lucide-react";
+import programmPoster from "@/assets/Truck_Country_Festival_Programm_2026.jpg.asset.json";
 
 type Item = { time: string; text: string; highlight?: boolean };
 type Day = { day: string; date: string; items: Item[] };
