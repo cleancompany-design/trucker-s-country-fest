@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarClock, Calendar, Truck, Gauge, TreePine, Music, Users, ChevronDown, Download } from "lucide-react";
-import programmPoster from "@/assets/Truck_Country_Festival_Programm_2026.jpg.asset.json";
+const programmPosterUrl = "/Truck_Country_Festival_Programm_2026.jpg";
 
 type Item = { time: string; text: string; highlight?: boolean };
 type Day = { day: string; date: string; items: Item[] };
@@ -112,7 +112,7 @@ const ProgrammSection = () => {
             </div>
           ))}
           <a
-            href={programmPoster.url}
+            href={programmPosterUrl}
             download="Truck_Country_Festival_Programm_2026.jpg"
             className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-full px-3 py-1.5 sm:px-4 sm:py-2"
           >
