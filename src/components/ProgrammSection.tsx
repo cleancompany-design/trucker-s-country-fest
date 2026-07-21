@@ -48,6 +48,7 @@ const days: Day[] = [
       { time: "10:00", text: "Eröffnung Festivalgelände durch Tibor Eggestein", highlight: true },
       { time: "ab 10:00", text: "2. Tag Truck Trial EM" },
       { time: "10:30", text: "1/4 Meile" },
+      { time: "10:30", text: "Truckergottesdienst" },
       { time: "10:30", text: "Speedcarving – Kettensägenschnitzen" },
       { time: "12:00", text: "Line Dance Vorführung (Hauptbühne)" },
       { time: "12:30", text: "Line Dance Kurs (Hauptbühne)" },
