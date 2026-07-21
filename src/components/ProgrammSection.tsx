@@ -26,7 +26,7 @@ const days: Day[] = [
       { time: "ab 10:30", text: "Wettkampf „Stärkste Spedition\"" },
       { time: "10:30", text: "Line Dance Vorführung (Hauptbühne)" },
       { time: "11:00", text: "Line Dance Kurs (Hauptbühne)" },
-      { time: "11:30", text: "Speedcarving mit Versteigerung – Weltmeister im Kettensägenschnitzen" },
+      { time: "11:30", text: "Speedcarving mit Versteigerung" },
       { time: "12:30", text: "Falknershow" },
       { time: "13:30", text: "Monstertruckshow" },
       { time: "14:00", text: "1/4 Meile" },
